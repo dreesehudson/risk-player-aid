@@ -27,6 +27,7 @@ const Body = (props) => {
                             <FontAwesomeIcon className='mx-2 fa-3x text-light' icon={faDice} />
                         </Button>
                         <Modal isOpen={modal} size='lg' toggle={toggle} className={className}>
+                            <ModalHeader toggle={toggle}></ModalHeader>
                             <ModalBody>
                                 <Row>
                                     <Col className="justify-content-center">
