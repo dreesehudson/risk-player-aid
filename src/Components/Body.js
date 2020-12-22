@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faDice } from '@fortawesome/free-solid-svg-icons'
-import { Card, Button, CardTitle, CardText, Row, Col, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import { faBan, faDice } from '@fortawesome/free-solid-svg-icons'
+import { Card, Button, CardTitle, CardText, Row, Col, Modal, ModalHeader, ModalBody, ModalFooter, Input, Label } from 'reactstrap';
+import { faFortAwesomeAlt } from '@fortawesome/free-brands-svg-icons';
 
 const Body = (props) => {
-    const { buttonLabel, className } = props;
+    const { className } = props;
     const [modal, setModal] = useState(false);
 
     const toggle = () => setModal(!modal);
@@ -19,20 +20,39 @@ const Body = (props) => {
             </Col>
             <Col sm="6">
                 <Card body>
-                {/* Combat Modal */}
+                    {/* Combat Modal */}
                     <CardTitle tag="h5">Combat Roll</CardTitle>
                     <>
                         <Button onClick={toggle}>
                             <FontAwesomeIcon className='mx-2 fa-3x text-light' icon={faDice} />
                         </Button>
-                        <Modal isOpen={modal} toggle={toggle} className={className}>
-                            <ModalHeader toggle={toggle}>Modal title</ModalHeader>
+                        <Modal isOpen={modal} size='lg' toggle={toggle} className={className}>
                             <ModalBody>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                <Row>
+                                    <Col className="justify-content-center">
+                                        <Label>Attacker</Label>
+                                        <Input></Input>
+                                    </Col>
+                                    <Col className="justify-content-center">
+                                        <Label>Defender</Label>
+                                        <Input></Input>
+                                    </Col>
+                                </Row>
+                                <Row>
+                                    <Col className='col-6'>
+                                    </Col>
+
+                                    <Col className='justify-content-center col-6'>
+                                        <FontAwesomeIcon className='m-3 fa-3x' icon={faFortAwesomeAlt} />
+                                        <FontAwesomeIcon className='m-3 fa-3x' icon={faBan} />
+                                    </Col>
+                                </Row>
+
+
                             </ModalBody>
-                            <ModalFooter>
-                                <Button color="primary" onClick={toggle}>Do Something</Button>{' '}
-                                <Button color="secondary" onClick={toggle}>Cancel</Button>
+                            <ModalFooter className="justify-content-center">
+                                <Button color="primary" onClick={toggle}>Roll</Button>{' '}
+                                <Button color="secondary" onClick={toggle}>Retreat</Button>
                             </ModalFooter>
                         </Modal>
                     </>
