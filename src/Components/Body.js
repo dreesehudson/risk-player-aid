@@ -1,14 +1,16 @@
 import React, { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBan, faDice } from '@fortawesome/free-solid-svg-icons'
-import { Card, Button, CardTitle, CardText, Row, Col, Modal, ModalHeader, ModalBody, ModalFooter, Input, Label, Container } from 'reactstrap';
+import { Card, Button, CardTitle, CardText, Row, Col, Modal, ModalHeader, ModalBody, ModalFooter, Input, Label, Container, ListGroup, ListGroupItem } from 'reactstrap';
 import { faFortAwesomeAlt } from '@fortawesome/free-brands-svg-icons'
 import RedStarTracker from './RedStarTracker'
+import { territories } from '../utilities/territories'
+
 const Body = (props) => {
     const { className } = props;
     const [modal, setModal] = useState(false);
     {/* players will need to be moved to a useContext helper that is populated from Austin's new game modal */ }
-    const [players, setPlayers] = useState([{ name: "Player 1" }, { name: "Player 2" }, {name: 'Player 3'}]);
+    const [players, setPlayers] = useState([{ name: "Player 1" }, { name: "Player 2" }, { name: 'Player 3' }]);
 
     const toggle = () => setModal(!modal);
     return (
@@ -28,11 +30,19 @@ const Body = (props) => {
             </Card>
             <Row className="mt-3">
                 <Col sm="6">
-                {/* Recruitment Pane */}
+                    {/* Recruitment Pane */}
                     <Card body>
-                        <CardTitle tag="h5">Special Title Treatment</CardTitle>
-                        <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
-                        <Button>Ryan was here</Button>
+                        <CardTitle tag="h5">Territories</CardTitle>
+                        <ListGroup>
+                            {
+                                territories.map((item, idx) => {
+                                    return (
+                                        <ListGroupItem key={idx}><h3>{item.continent} Bonus: {item.bonus}</h3></ListGroupItem>
+
+                                    )
+                                })
+                            }
+                        </ListGroup>
                     </Card>
                 </Col>
                 <Col sm="6">
