@@ -1,20 +1,26 @@
 import React, { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBan, faDice } from '@fortawesome/free-solid-svg-icons'
-import { Card, Button, CardTitle, CardText, Row, Col, Modal, ModalHeader, ModalBody, ModalFooter, Input, Label, Container, ListGroup, ListGroupItem } from 'reactstrap';
+import { Card, Button, CardTitle, Row, Col, Modal, ModalHeader, ModalBody, ModalFooter, Input, Label, Container, ListGroup, ListGroupItem } from 'reactstrap';
 import { faFortAwesomeAlt } from '@fortawesome/free-brands-svg-icons'
 import RedStarTracker from './RedStarTracker'
 import { territories } from '../utilities/territories'
 import Select from "react-select";
 
 const Body = (props) => {
-    const [selectedOption, setSelectedOption] = useState(null);
+    const [battleground, setBattleground] = useState(false);
+    const [attackingFrom, setAttackingFrom] = useState(false);
     const { className } = props;
     const [modal, setModal] = useState(false);
     {/* players will need to be moved to a useContext helper that is populated from Austin's new game modal */ }
     const [players, setPlayers] = useState([{ name: "Player 1" }, { name: "Player 2" }, { name: 'Player 3' }]);
-
     const toggle = () => setModal(!modal);
+
+    const [states, setStates] = useState([])
+
+    //map through each continent within the territories JSON
+    //return array of territories objects
+
     return (
         <Container>
             <Card>
@@ -63,20 +69,32 @@ const Body = (props) => {
                                             <Label>Battleground</Label>
                                             <Select
                                                 className="text-dark"
-                                                defaultValue={selectedOption}
-                                                onChange={setSelectedOption}
+                                                defaultValue={'Select...'}
+                                                onChange={setBattleground}
                                                 options={territories}
                                             />
                                         </Col>
                                         <Col className="justify-content-center">
-                                            <Label>Attacker</Label>
-                                            <Select
-                                                className="text-dark"
-                                                defaultValue={selectedOption}
-                                                onChange={setSelectedOption}
-                                                //needs to only display the adjacent territories to the selected battleground (part of the territory object)
-                                                options={territories}
-                                            />
+                                            <Label>Attacking From</Label>
+                                            {battleground ?
+                                                <Select
+                                                    className="text-dark"
+                                                    defaultValue={'Select Battleground First'}
+                                                    onChange={setAttackingFrom}
+                                                    //needs to only display the adjacent territories to the selected battleground (part of the territory object)
+                                                    options={territories}
+                                                />
+                                                :
+                                                <Select
+                                                    disabled
+                                                    className="text-dark"
+                                                    defaultValue={'Pick Battleground'}
+                                                    onChange={setAttackingFrom}
+                                                    //needs to only display the adjacent territories to the selected battleground (part of the territory object)
+                                                    options={territories}
+                                                />
+
+                                            }
                                         </Col>
                                     </Row>
                                     <Row>
@@ -92,13 +110,13 @@ const Body = (props) => {
                                     <Row>
                                         <Col className='justify-content-center col-6'>
                                             {
-                                                selectedOption.bunker ?
+                                                battleground.bunker ?
                                                     <FontAwesomeIcon className='m-2 mt-3 fa-3x' color={'#F18F01'} icon={faFortAwesomeAlt} />
                                                     :
                                                     <FontAwesomeIcon className='m-2 mt-3 fa-3x' icon={faFortAwesomeAlt} />
                                             }
                                             {
-                                                selectedOption.ammoShortage ?
+                                                battleground.ammoShortage ?
                                                     <FontAwesomeIcon className='m-2 mt-3 fa-3x' color={'red'} icon={faBan} />
                                                     :
                                                     <FontAwesomeIcon className='m-2 mt-3 fa-3x' icon={faBan} />
@@ -106,7 +124,6 @@ const Body = (props) => {
                                         </Col>
                                         <Col className='col-6'>
                                         </Col>
-
                                     </Row>
                                 </ModalBody>
                                 <ModalFooter className="justify-content-center">
