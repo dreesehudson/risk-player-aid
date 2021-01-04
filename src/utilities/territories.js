@@ -10,6 +10,8 @@ export const territories =
                     owner: null,
                     minorCity: null,
                     majorCity: null,
+                    ammoShortage: null,
+                    bunker: null,
                     adjacent: ["North Africa", "East Africa, South Africa"]
                 },
                 {
@@ -17,6 +19,8 @@ export const territories =
                     owner: null,
                     minorCity: null,
                     majorCity: null,
+                    ammoShortage: null,
+                    bunker: null,
                     adjacent: ["North Africa", "Middle East", "Egypt", "Congo", "South Africa", "Madagascar"]
                 },
                 {
@@ -24,6 +28,8 @@ export const territories =
                     owner: null,
                     minorCity: null,
                     majorCity: null,
+                    ammoShortage: null,
+                    bunker: null,
                     adjacent: ["North Africa", "Middle East", "Southern Europe", "East Africa"]
                 },
                 {
@@ -31,6 +37,8 @@ export const territories =
                     owner: null,
                     minorCity: null,
                     majorCity: null,
+                    ammoShortage: null,
+                    bunker: null,
                     adjacent: ["Egypt", "Brazil", "Congo", "Madagascar", "Western Europe", "Southern Europe"]
                 },
                 {
@@ -38,6 +46,8 @@ export const territories =
                     owner: null,
                     minorCity: null,
                     majorCity: null,
+                    ammoShortage: null,
+                    bunker: null,
                     adjacent: ["East Africa", "South Africa"]
                 },
                 {
@@ -45,6 +55,8 @@ export const territories =
                     owner: null,
                     minorCity: null,
                     majorCity: null,
+                    ammoShortage: null,
+                    bunker: null,
                     adjacent: ["Madagascar", "Congo", "East Africa"]
                 },
             ],
@@ -58,6 +70,8 @@ export const territories =
                     owner: null,
                     minorCity: null,
                     majorCity: null,
+                    ammoShortage: null,
+                    bunker: null,
                     adjacent: ["Russia", "India", "Middle East", "China", "Ural"]
                 },
                 {
@@ -65,6 +79,8 @@ export const territories =
                     owner: null,
                     minorCity: null,
                     majorCity: null,
+                    ammoShortage: null,
+                    bunker: null,
                     adjacent: ["India", "Middle East", "Ural", "Southeast Asia", "Mongolia", "Siberia"]
                 },
                 {
@@ -72,6 +88,8 @@ export const territories =
                     owner: null,
                     minorCity: null,
                     majorCity: null,
+                    ammoShortage: null,
+                    bunker: null,
                     adjacent: ["China", "Middle East", "Afganistan", "Southeast Asia"]
                 },
                 {
@@ -79,6 +97,8 @@ export const territories =
                     owner: null,
                     minorCity: null,
                     majorCity: null,
+                    ammoShortage: null,
+                    bunker: null,
                     adjacent: ["Mongolia", "Siberia", "Yakutsk", "Kamchatka"]
                 },
                 {
@@ -86,6 +106,8 @@ export const territories =
                     owner: null,
                     minorCity: null,
                     majorCity: null,
+                    ammoShortage: null,
+                    bunker: null,
                     adjacent: ["Kamchatka", "Mongolia"]
                 },
                 {
@@ -93,6 +115,8 @@ export const territories =
                     owner: null,
                     minorCity: null,
                     majorCity: null,
+                    ammoShortage: null,
+                    bunker: null,
                     adjacent: ["Alaska", "Yakutsk", "Irkutsk", "Japan", "Mongolia"]
                 },
                 {
@@ -100,6 +124,8 @@ export const territories =
                     owner: null,
                     minorCity: null,
                     majorCity: null,
+                    ammoShortage: null,
+                    bunker: null,
                     adjacent: ["Russia", "Egypt", "East Africa", "Southern Europe", "India", "Afganistan"]
                 },
                 {
@@ -107,6 +133,8 @@ export const territories =
                     owner: null,
                     minorCity: null,
                     majorCity: null,
+                    ammoShortage: null,
+                    bunker: null,
                     adjacent: ["Japan", "Kamchatka", "Irkutsk", "Siberia", "China"]
                 },
                 {
@@ -114,6 +142,8 @@ export const territories =
                     owner: null,
                     minorCity: null,
                     majorCity: null,
+                    ammoShortage: null,
+                    bunker: null,
                     adjacent: ["Ural", "China", "Mongolia", "Irkutsk", "Yakutsk"]
                 },
                 {
@@ -121,6 +151,8 @@ export const territories =
                     owner: null,
                     minorCity: null,
                     majorCity: null,
+                    ammoShortage: null,
+                    bunker: null,
                     adjacent: ["Indonesia", "China", "India"]
                 },
                 {
@@ -128,6 +160,8 @@ export const territories =
                     owner: null,
                     minorCity: null,
                     majorCity: null,
+                    ammoShortage: null,
+                    bunker: null,
                     adjacent: ["Russia", "China", "Siberia", "Afganistan"]
                 },
                 {
@@ -135,6 +169,8 @@ export const territories =
                     owner: null,
                     minorCity: null,
                     majorCity: null,
+                    ammoShortage: null,
+                    bunker: null,
                     adjacent: ["Irkutsk", "Kamchatka", "Siberia"]
                 },
             ],
@@ -148,6 +184,8 @@ export const territories =
                     owner: null,
                     minorCity: null,
                     majorCity: null,
+                    ammoShortage: null,
+                    bunker: null,
                     adjacent: ["New Guinea", "Western Australia"]
                 },
                 {
@@ -155,6 +193,8 @@ export const territories =
                     owner: null,
                     minorCity: null,
                     majorCity: null,
+                    ammoShortage: null,
+                    bunker: null,
                     adjacent: ["New Guinea", "Western Australia", "Southeast Asia"]
                 },
                 {
@@ -162,6 +202,8 @@ export const territories =
                     owner: null,
                     minorCity: null,
                     majorCity: null,
+                    ammoShortage: null,
+                    bunker: null,
                     adjacent: ["Eastern Australia", "Western Australia", "Indonesia"]
                 },
                 {
@@ -169,6 +211,8 @@ export const territories =
                     owner: null,
                     minorCity: null,
                     majorCity: null,
+                    ammoShortage: null,
+                    bunker: null,
                     adjacent: ["Eastern Australia", "New Guinea", "Indonesia"]
                 },
             ],
@@ -182,6 +226,8 @@ export const territories =
                     owner: null,
                     minorCity: null,
                     majorCity: null,
+                    ammoShortage: null,
+                    bunker: null,
                     adjacent: ["Iceland", "Western Europe", "Northern Europe", "Scandinavia"]
                 },
                 {
@@ -189,6 +235,8 @@ export const territories =
                     owner: null,
                     minorCity: null,
                     majorCity: null,
+                    ammoShortage: null,
+                    bunker: null,
                     adjacent: ["Great Britain", "Greenland", "Scandinavia"]
                 },
                 {
@@ -196,6 +244,8 @@ export const territories =
                     owner: null,
                     minorCity: null,
                     majorCity: null,
+                    ammoShortage: null,
+                    bunker: null,
                     adjacent: ["Great Britain", "Iceland", "Russia", "Northern Europe"]
                 },
                 {
@@ -203,6 +253,8 @@ export const territories =
                     owner: null,
                     minorCity: null,
                     majorCity: null,
+                    ammoShortage: null,
+                    bunker: null,
                     adjacent: ["Scandinavia", "Ural", "Afganistan", "Middle East", "Southern Europe", "Northern Europe"]
                 },
                 {
@@ -210,6 +262,8 @@ export const territories =
                     owner: null,
                     minorCity: null,
                     majorCity: null,
+                    ammoShortage: null,
+                    bunker: null,
                     adjacent: ["Scandinavia", "Southern Europe", "Western Europe", "Great Britain", "Russia"]
                 },
                 {
@@ -217,6 +271,8 @@ export const territories =
                     owner: null,
                     minorCity: null,
                     majorCity: null,
+                    ammoShortage: null,
+                    bunker: null,
                     adjacent: ["Southern Europe", "Northern Europe", "Great Britain", "North Africa"]
                 },
                 {
@@ -224,6 +280,8 @@ export const territories =
                     owner: null,
                     minorCity: null,
                     majorCity: null,
+                    ammoShortage: null,
+                    bunker: null,
                     adjacent: ["Northern Europe", "Western Europe", "North Africa", "Middle East", "Egypt", "Russia"]
                 },
             ],
@@ -237,6 +295,8 @@ export const territories =
                     owner: null,
                     minorCity: null,
                     majorCity: null,
+                    ammoShortage: null,
+                    bunker: null,
                     adjacent: ["Kamchatka", "Northwest Territory", "Alberta"]
                 },
                 {
@@ -244,6 +304,8 @@ export const territories =
                     owner: null,
                     minorCity: null,
                     majorCity: null,
+                    ammoShortage: null,
+                    bunker: null,
                     adjacent: ["Alaska", "Northwest Territory", "Ontario", "Western United States"]
                 },
                 {
@@ -251,6 +313,8 @@ export const territories =
                     owner: null,
                     minorCity: null,
                     majorCity: null,
+                    ammoShortage: null,
+                    bunker: null,
                     adjacent: ["Eastern United States", "Western United States", "Venezuela"]
                 },
                 {
@@ -258,6 +322,8 @@ export const territories =
                     owner: null,
                     minorCity: null,
                     majorCity: null,
+                    ammoShortage: null,
+                    bunker: null,
                     adjacent: ["Greenland", "Ontario", "Eastern United States"]
                 },
                 {
@@ -265,6 +331,8 @@ export const territories =
                     owner: null,
                     minorCity: null,
                     majorCity: null,
+                    ammoShortage: null,
+                    bunker: null,
                     adjacent: ["Eastern Canada", "Ontario", "Western United States", "Central America"]
                 },
                 {
@@ -272,6 +340,8 @@ export const territories =
                     owner: null,
                     minorCity: null,
                     majorCity: null,
+                    ammoShortage: null,
+                    bunker: null,
                     adjacent: ["Eastern Canada", "Ontario", "Iceland", "Northwest Territory"]
                 },
                 {
@@ -279,6 +349,8 @@ export const territories =
                     owner: null,
                     minorCity: null,
                     majorCity: null,
+                    ammoShortage: null,
+                    bunker: null,
                     adjacent: ["Greenland", "Northwest Territory", "Alberta", "Western United States", "Eastern United States", "Eastern Canada"]
                 },
                 {
@@ -286,6 +358,8 @@ export const territories =
                     owner: null,
                     minorCity: null,
                     majorCity: null,
+                    ammoShortage: null,
+                    bunker: null,
                     adjacent: ["Greenland", "Alaska", "Alberta", "Ontario"]
                 },
                 {
@@ -293,6 +367,8 @@ export const territories =
                     owner: null,
                     minorCity: null,
                     majorCity: null,
+                    ammoShortage: null,
+                    bunker: null,
                     adjacent: ["Alberta", "Eastern United States", "Central America", "Ontario"]
                 },
             ],
@@ -306,6 +382,8 @@ export const territories =
                     owner: null,
                     minorCity: null,
                     majorCity: null,
+                    ammoShortage: null,
+                    bunker: null,
                     adjacent: ["Brazil", "Peru"]
                 },
                 {
@@ -313,6 +391,8 @@ export const territories =
                     owner: null,
                     minorCity: null,
                     majorCity: null,
+                    ammoShortage: null,
+                    bunker: null,
                     adjacent: ["North Africa", "Peru", "Argentina", "Venezuela"]
                 },
                 {
@@ -320,6 +400,8 @@ export const territories =
                     owner: null,
                     minorCity: null,
                     majorCity: null,
+                    ammoShortage: null,
+                    bunker: null,
                     adjacent: ["Brazil", "Argentina", "Venezuela"]
                 },
                 {
@@ -327,9 +409,10 @@ export const territories =
                     owner: null,
                     minorCity: null,
                     majorCity: null,
+                    ammoShortage: null,
+                    bunker: null,
                     adjacent: ["Brazil", "Peru", "Central America"]
                 },
             ],
         },
     ]
-
