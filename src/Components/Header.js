@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
+import { Collapse, Button, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faDice, faChessPawn, faGlobeAmericas, faCog, faRocket } from '@fortawesome/free-solid-svg-icons'
 import { faMap } from '@fortawesome/free-solid-svg-icons'
@@ -18,36 +18,38 @@ const Header = (props) => {
         <Collapse isOpen={isOpen} navbar>
           <Nav className="ml-auto" navbar>
             <NavItem>
-              <NavLink className='mx-2 text-light'>New Game</NavLink>
+              <Button>
+                <h6>New Game</h6>
+              </Button>
             </NavItem>
             <NavItem>
               <NavLink>
-                  <FontAwesomeIcon className='mx-2 fa-3x text-light' icon={faDice}/>
+                <FontAwesomeIcon className='mx-2 fa-3x text-light' icon={faDice} />
               </NavLink>
             </NavItem>
             <NavItem>
               <NavLink>
-                  <FontAwesomeIcon className='mx-2 fa-3x text-light' icon={faChessPawn}/>
+                <FontAwesomeIcon className='mx-2 fa-3x text-light' icon={faChessPawn} />
               </NavLink>
             </NavItem>
             <NavItem>
               <NavLink>
-                  <FontAwesomeIcon className='mx-2 fa-3x text-light' icon={faGlobeAmericas}/>
+                <FontAwesomeIcon className='mx-2 fa-3x text-light' icon={faGlobeAmericas} />
               </NavLink>
             </NavItem>
             <NavItem>
               <NavLink>
-                  <FontAwesomeIcon className='mx-2 fa-3x text-light' icon={faMap}/>
+                <FontAwesomeIcon className='mx-2 fa-3x text-light' icon={faMap} />
               </NavLink>
             </NavItem>
             <NavItem>
               <NavLink>
-                  <FontAwesomeIcon className='mx-2 fa-3x text-light' icon={faCog}/>
+                <FontAwesomeIcon className='mx-2 fa-3x text-light' icon={faCog} />
               </NavLink>
             </NavItem>
             <NavItem>
               <NavLink>
-                  <FontAwesomeIcon className='mx-2 fa-3x text-light' icon={faRocket}/>
+                <FontAwesomeIcon className='mx-2 fa-3x text-light' icon={faRocket} />
               </NavLink>
             </NavItem>
           </Nav>
