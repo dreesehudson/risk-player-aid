@@ -4,19 +4,19 @@ import { faBan, faDice } from '@fortawesome/free-solid-svg-icons'
 import { Card, Button, CardTitle, Row, Col, Modal, ModalHeader, ModalBody, ModalFooter, Input, Label, Container, ListGroup, ListGroupItem } from 'reactstrap';
 import { faFortAwesomeAlt } from '@fortawesome/free-brands-svg-icons'
 import RedStarTracker from './RedStarTracker'
+import Recruitment from './Recruitment'
 import { territories } from '../utilities/territories'
 import Select from "react-select";
 
 const Body = (props) => {
-    const [battleground, setBattleground] = useState(false);
-    const [attackingFrom, setAttackingFrom] = useState(false);
-    const { className } = props;
+    const [battleground, setBattleground] = useState('');
+    const [attackingFrom, setAttackingFrom] = useState('');
     const [modal, setModal] = useState(false);
     {/* players will need to be moved to a useContext helper that is populated from Austin's new game modal */ }
     const [players, setPlayers] = useState([{ name: "Player 1" }, { name: "Player 2" }, { name: 'Player 3' }]);
-    const toggle = () => setModal(!modal);
-
     const [states, setStates] = useState([])
+    const { className } = props;
+    const toggle = () => setModal(!modal);
 
     //map through each continent within the territories JSON
     //return array of territories objects
@@ -38,10 +38,10 @@ const Body = (props) => {
             </Card>
             <Row className="mt-3">
                 <Col sm="6">
-                    {/* Recruitment Pane */}
+                    {/* Territory Pane */}
                     <Card body>
                         <CardTitle tag="h5">Territories</CardTitle>
-                        <ListGroup>
+                        <ListGroup className='list-group-flush'>
                             {
                                 territories.map((item, idx) => {
                                     return (
@@ -56,11 +56,9 @@ const Body = (props) => {
                 <Col sm="6">
                     <Row>
                         <Col>
-                            <Card body>
-                                {/* Recruit Panel */}
-                                <CardTitle tag="h5">Recruitment</CardTitle>
-
-                            </Card>
+                            <Recruitment 
+                                players={players}
+                            />
                         </Col>
                         <Col>
                             <Card body>
