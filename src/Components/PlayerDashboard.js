@@ -13,7 +13,7 @@ const Body = (props) => {
     const [attackingFrom, setAttackingFrom] = useState('');
     const [modal, setModal] = useState(false);
     {/* players will need to be moved to a useContext helper that is populated from Austin's new game modal */ }
-    const [players, setPlayers] = useState([{ name: "Player 1" }, { name: "Player 2" }, { name: 'Player 3' }]);
+    const [players, setPlayers] = useState([{ id: 1, name: "Player 1" }, { id: 2, name: "Player 2" }, { id: 3, name: 'Player 3' }]);
     const [states, setStates] = useState([])
     const { className } = props;
     const toggle = () => setModal(!modal);
@@ -22,9 +22,9 @@ const Body = (props) => {
     //return array of territories objects
 
     return (
-        <Container>
+        <Container className='mt-3'>
             <Card>
-                <Row className="mt-3 justify-content-center">
+                <Row className="my-3 justify-content-center">
                     {/* players will need to be moved to a useContext helper that is populated from Austin's new game modal */}
                     {players.map((item, idx) => {
                         return (
@@ -65,8 +65,8 @@ const Body = (props) => {
                                 {/* Combat Modal */}
                                 <CardTitle tag="h5">Combat Roll</CardTitle>
                                 <>
-                                    <Button onClick={toggle}>
-                                        <FontAwesomeIcon className='mx-2 fa-3x text-light' icon={faDice} />
+                                    <Button className='mx-auto my-1 p-2' onClick={toggle}>
+                                        <FontAwesomeIcon className='mx-2 p-0 fa-3x text-light' icon={faDice} />
                                     </Button>
                                     <Modal isOpen={modal} size='lg' toggle={toggle} className={className}>
                                         <ModalHeader toggle={toggle}></ModalHeader>

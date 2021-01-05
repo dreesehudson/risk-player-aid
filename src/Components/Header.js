@@ -18,16 +18,20 @@ const Header = (props) => {
         <Collapse isOpen={isOpen} navbar>
           <Nav className="ml-auto" navbar>
             <NavItem className='m-2'>
-              <Button href='/game'>
-                <h6>Play</h6>
-              </Button>
+              <NavLink>
+                <Button href='/game'>
+                  <h6>Play</h6>
+                </Button>
+              </NavLink>
             </NavItem>
             <NavItem className='m-2'>
-              <Button>
-                <h6>New Game</h6>
-              </Button>
+              <NavLink>
+                <Button>
+                  <h6>New Game</h6>
+                </Button>
+              </NavLink>
             </NavItem>
-            <NavItem>
+            {/* <NavItem>
               <NavLink>
                 <FontAwesomeIcon className='mx-2 fa-3x text-light' icon={faDice} />
               </NavLink>
@@ -56,7 +60,7 @@ const Header = (props) => {
               <NavLink>
                 <FontAwesomeIcon className='mx-2 fa-3x text-light' icon={faRocket} />
               </NavLink>
-            </NavItem>
+            </NavItem> */}
           </Nav>
         </Collapse>
       </Navbar>

@@ -2,7 +2,7 @@ import React from 'react'
 import './App.css';
 import Header from './Components/Header'
 import PlayerDashboard from './Components/PlayerDashboard'
-//import Setup from './Components/Setup'
+import Setup from './Components/Setup'
 import Footer from './Components/Footer'
 import {
   BrowserRouter as Router,
@@ -19,9 +19,9 @@ function App() {
           <Route path="/game">
             <PlayerDashboard />
           </Route>
-          {/* <Route path="/setup">
+          <Route path="/setup">
             <Setup />
-          </Route> */}
+          </Route>
         </Switch>
 
         <Footer/>

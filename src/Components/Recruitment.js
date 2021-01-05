@@ -11,14 +11,13 @@ function Recruitment(props) {
             <Card body>
                 {/* Recruit Panel */}
                 <CardTitle tag="h5">Recruitment</CardTitle>
-                <ListGroup class="list-group list-group-flush">
-                    <ListGroupItem class="list-group-item">Cras justo odio</ListGroupItem>
-                    <ListGroupItem class="list-group-item">Cras justo odio</ListGroupItem>
-                    <ListGroupItem class="list-group-item">Cras justo odio</ListGroupItem>
-                    <ListGroupItem class="list-group-item">Cras justo odio</ListGroupItem>
-                    <ListGroupItem class="list-group-item">Cras justo odio</ListGroupItem>
-                    <ListGroupItem class="list-group-item">Cras justo odio</ListGroupItem>
-
+                <ListGroup className="list-group-flush">
+                    {props.players.map((item, idx) => {
+                        return (
+                            <ListGroupItem key={idx} className="list-group-item">{item.name}</ListGroupItem>
+                        )
+                    })
+                    }
                 </ListGroup>
             </Card>
         </>
