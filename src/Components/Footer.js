@@ -4,8 +4,8 @@ import { Button } from 'reactstrap';
 const Footer = () => {
   
     return (
-
-<Button>Austin's Button</Button>
+        <>
+        </>
     )
 }
 
