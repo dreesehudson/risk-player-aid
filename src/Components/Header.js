@@ -17,7 +17,12 @@ const Header = (props) => {
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="ml-auto" navbar>
-            <NavItem>
+            <NavItem className='m-2'>
+              <Button href='/game'>
+                <h6>Play</h6>
+              </Button>
+            </NavItem>
+            <NavItem className='m-2'>
               <Button>
                 <h6>New Game</h6>
               </Button>
