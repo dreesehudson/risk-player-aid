@@ -46,7 +46,6 @@ const Body = (props) => {
                                 territories.map((item, idx) => {
                                     return (
                                         <ListGroupItem key={idx}><h3>{item.continent} <span class="badge rounded-pill bg-secondary ml-3 text-light">{item.bonus}</span></h3></ListGroupItem>
-
                                     )
                                 })
                             }
@@ -56,7 +55,7 @@ const Body = (props) => {
                 <Col sm="6">
                     <Row>
                         <Col>
-                            <Recruitment 
+                            <Recruitment
                                 players={players}
                             />
                         </Col>
@@ -144,7 +143,7 @@ const Body = (props) => {
                     </Row>
                 </Col>
             </Row>
-        </Container>
+        </Container >
     );
 };
 
