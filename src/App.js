@@ -1,15 +1,17 @@
 import React from 'react'
+import Login from './Components/Login'
 import './App.css';
-import Header from './Components/Header'
-import Body from './Components/Body'
-import Footer from './Components/Footer'
+
 
 function App() {
+  const [currentPage, setCurrenPage] = ('login')
   return (
     <div className="App">
-      <Header />
-        <Body />
-        <Footer />
+    <div className="container">
+    {currentPage === 'login' &&
+        <Login />
+    }
+    </div>    
     </div>
   );
 }

@@ -1,9 +1,10 @@
-import React from 'react';
+import React from 'react'
 import { Card, Button, CardTitle, CardText, Row, Col } from 'reactstrap';
 
-const Example = (props) => {
+function Body() {
   return (
-    <Row className="mt-3">
+    <div>
+      <Row className="mt-3">
       <Col sm="6">
         <Card body>
           <CardTitle tag="h5">Special Title Treatment</CardTitle>
@@ -19,7 +20,8 @@ const Example = (props) => {
         </Card>
       </Col>
     </Row>
-  );
-};
+    </div>
+  )
+}
 
-export default Example;
+export default Body
