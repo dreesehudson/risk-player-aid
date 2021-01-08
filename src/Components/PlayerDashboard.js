@@ -1,12 +1,14 @@
 import React, { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBan, faDice } from '@fortawesome/free-solid-svg-icons'
-import { Card, Button, CardTitle, Row, Col, Modal, ModalHeader, ModalBody, ModalFooter, Input, Label, Container, ListGroup, ListGroupItem, Collapse } from 'reactstrap';
+import { Card, Button, CardTitle, Row, Col, Modal, ModalHeader, ModalBody, ModalFooter, Input, Label, Container, ListGroup, ListGroupItem, Collapse, Nav, NavItem, TabContent, TabPane } from 'reactstrap';
 import { faFortAwesomeAlt } from '@fortawesome/free-brands-svg-icons'
 import RedStarTracker from './RedStarTracker'
 import Recruitment from './Recruitment'
 import { worldMap } from '../utilities/territories'
 import Select from "react-select";
+
+import MapTabs from './MapTabs';
 
 const Body = (props) => {
     const [battleground, setBattleground] = useState('');
@@ -14,11 +16,10 @@ const Body = (props) => {
     const [modal, setModal] = useState(false);
     {/* players will need to be moved to a useContext helper that is populated from Austin's new game modal */ }
     const [players, setPlayers] = useState([{ id: 1, name: "Player 1" }, { id: 2, name: "Player 2" }, { id: 3, name: 'Player 3' }]);
-    const [states, setStates] = useState([])
     const { className } = props;
     const toggle = () => setModal(!modal);
-    const [isOpen, setIsOpen] = useState(false);
-    const toggleCollapse = () => setIsOpen(!isOpen);
+
+
 
     //map through each continent within the territories JSON
     //return array of territories objects
@@ -43,30 +44,10 @@ const Body = (props) => {
                     {/* Territory Pane */}
                     <Card body>
                         <CardTitle tag="h5">Territories</CardTitle>
-                        <ListGroup className='list-group-flush'>
-                            {
-                                worldMap.map((item, idx) => {
-                                    return (
-                                        <>
-                                            <Button className='text-dark bg-light border-light'>
-                                                <ListGroupItem key={idx} onClick={toggleCollapse}><h3>{item.continent} <span class="badge text-light rounded-pill bg-secondary ml-3">{item.bonus}</span></h3></ListGroupItem>
-                                            </Button>
-                                            <Collapse isOpen={isOpen}>
-                                                <ListGroup>
-                                                    {
-                                                        item.territories.map((i, key) => {
-                                                            return (
-                                                                <ListGroupItem key={key}><h5>{i.name}</h5></ListGroupItem>
-                                                            )
-                                                        })
-                                                    }
-                                                </ListGroup>
-                                            </Collapse>
-                                        </>
-                                    )
-                                })
-                            }
-                        </ListGroup>
+
+                        <MapTabs/>
+
+
                     </Card>
                 </Col>
                 <Col sm="6">
