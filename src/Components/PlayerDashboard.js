@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBan, faDice } from '@fortawesome/free-solid-svg-icons'
-import { Card, Button, CardTitle, Row, Col, Modal, ModalHeader, ModalBody, ModalFooter, Input, Label, Container, ListGroup, ListGroupItem } from 'reactstrap';
+import { Card, Button, CardTitle, Row, Col, Modal, ModalHeader, ModalBody, ModalFooter, Input, Label, Container, ListGroup, ListGroupItem, Collapse } from 'reactstrap';
 import { faFortAwesomeAlt } from '@fortawesome/free-brands-svg-icons'
 import RedStarTracker from './RedStarTracker'
 import Recruitment from './Recruitment'
@@ -17,6 +17,8 @@ const Body = (props) => {
     const [states, setStates] = useState([])
     const { className } = props;
     const toggle = () => setModal(!modal);
+    const [isOpen, setIsOpen] = useState(false);
+    const toggleCollapse = () => setIsOpen(!isOpen);
 
     //map through each continent within the territories JSON
     //return array of territories objects
@@ -46,16 +48,20 @@ const Body = (props) => {
                                 worldMap.map((item, idx) => {
                                     return (
                                         <>
-                                            <ListGroupItem key={idx}><h3>{item.continent} <span class="badge rounded-pill bg-secondary ml-3 text-light">{item.bonus}</span></h3></ListGroupItem>
-                                            <ListGroup>
-                                                {
-                                                    item.territories.map((i, key) => {
-                                                        return (
-                                                            <ListGroupItem key={key}><h5>{i.name}</h5></ListGroupItem>
-                                                        )
-                                                    })
-                                                }
-                                            </ListGroup>
+                                            <Button className='text-dark bg-light border-light'>
+                                                <ListGroupItem key={idx} onClick={toggleCollapse}><h3>{item.continent} <span class="badge text-light rounded-pill bg-secondary ml-3">{item.bonus}</span></h3></ListGroupItem>
+                                            </Button>
+                                            <Collapse isOpen={isOpen}>
+                                                <ListGroup>
+                                                    {
+                                                        item.territories.map((i, key) => {
+                                                            return (
+                                                                <ListGroupItem key={key}><h5>{i.name}</h5></ListGroupItem>
+                                                            )
+                                                        })
+                                                    }
+                                                </ListGroup>
+                                            </Collapse>
                                         </>
                                     )
                                 })
