@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBan, faDice } from '@fortawesome/free-solid-svg-icons'
-import { Card, Button, CardTitle, Row, Col, Modal, ModalHeader, ModalBody, ModalFooter, Input, Label, Container, ListGroup, ListGroupItem, Collapse, Nav, NavItem, TabContent, TabPane } from 'reactstrap';
+import { Card, Button, CardTitle, Row, Col, Modal, ModalHeader, ModalBody, ModalFooter, Input, Label, Container } from 'reactstrap';
 import { faFortAwesomeAlt } from '@fortawesome/free-brands-svg-icons'
 import RedStarTracker from './RedStarTracker'
 import Recruitment from './Recruitment'

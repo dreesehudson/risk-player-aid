@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { TabContent, TabPane, Nav, NavItem, NavLink, Row, Col, ListGroup, ListGroupItem, Button, Collapse } from 'reactstrap';
 import { worldMap } from '../utilities/territories'
 import classnames from 'classnames';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faDiceD6 } from '@fortawesome/free-solid-svg-icons'
 
 const MapTabs = (props) => {
     const [activeTab, setActiveTab] = useState('1');
@@ -36,7 +38,13 @@ const MapTabs = (props) => {
                                                         {
                                                             item.territories.map((i, key) => {
                                                                 return (
-                                                                    <ListGroupItem key={key}><h5>{i.name}</h5></ListGroupItem>
+                                                                    <ListGroupItem key={key}>
+                                                                        <>
+                                                                            <h5>
+                                                                                {i.name}<span><Button className='bg-light'><FontAwesomeIcon className='fa-2x text-dark' icon={faDiceD6} /></Button></span>
+                                                                            </h5>
+                                                                        </>
+                                                                    </ListGroupItem>
                                                                 )
                                                             })
                                                         }
