@@ -5,7 +5,7 @@ import { Card, Button, CardTitle, Row, Col, Modal, ModalHeader, ModalBody, Modal
 import { faFortAwesomeAlt } from '@fortawesome/free-brands-svg-icons'
 import RedStarTracker from './RedStarTracker'
 import Recruitment from './Recruitment'
-import { territories } from '../utilities/territories'
+import { worldMap } from '../utilities/territories'
 import Select from "react-select";
 
 const Body = (props) => {
@@ -43,9 +43,20 @@ const Body = (props) => {
                         <CardTitle tag="h5">Territories</CardTitle>
                         <ListGroup className='list-group-flush'>
                             {
-                                territories.map((item, idx) => {
+                                worldMap.map((item, idx) => {
                                     return (
-                                        <ListGroupItem key={idx}><h3>{item.continent} <span class="badge rounded-pill bg-secondary ml-3 text-light">{item.bonus}</span></h3></ListGroupItem>
+                                        <>
+                                            <ListGroupItem key={idx}><h3>{item.continent} <span class="badge rounded-pill bg-secondary ml-3 text-light">{item.bonus}</span></h3></ListGroupItem>
+                                            <ListGroup>
+                                                {
+                                                    item.territories.map((i, key) => {
+                                                        return (
+                                                            <ListGroupItem key={key}><h5>{i.name}</h5></ListGroupItem>
+                                                        )
+                                                    })
+                                                }
+                                            </ListGroup>
+                                        </>
                                     )
                                 })
                             }
@@ -77,7 +88,7 @@ const Body = (props) => {
                                                         className="text-dark"
                                                         defaultValue={'Select...'}
                                                         onChange={setBattleground}
-                                                        options={territories}
+                                                        options={worldMap}
                                                     />
                                                 </Col>
                                                 <Col className="justify-content-center">
@@ -88,7 +99,7 @@ const Body = (props) => {
                                                             defaultValue={'Select Battleground First'}
                                                             onChange={setAttackingFrom}
                                                             //needs to only display the adjacent territories to the selected battleground (part of the territory object)
-                                                            options={territories}
+                                                            options={worldMap}
                                                         />
                                                         :
                                                         <Select
@@ -97,7 +108,7 @@ const Body = (props) => {
                                                             defaultValue={'Pick Battleground'}
                                                             onChange={setAttackingFrom}
                                                             //needs to only display the adjacent territories to the selected battleground (part of the territory object)
-                                                            options={territories}
+                                                            options={worldMap}
                                                         />
 
                                                     }

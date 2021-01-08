@@ -1,5 +1,5 @@
 
-export const territories =
+export const worldMap =
     [
         {
             bonus: 3,
@@ -416,3 +416,59 @@ export const territories =
             ],
         },
     ]
+
+
+
+// export const gameMap =
+//     [
+//         {
+//             continent: "Africa",
+//             territories: [
+//                 {
+//                     name: 'Congo',
+//                 },
+//                 {
+//                     name: 'East Africa',
+//                 },
+//                 {
+//                     name: 'Egypt',
+//                 },
+//             ]
+//         },
+//         {
+//             continent: "South America",
+//             territories: [
+//                 {
+//                     name: 'Argentina'
+//                 },
+//                 {
+//                     name: 'Brazil'
+//                 },
+//                 {
+//                     name: 'Peru'
+//                 },
+//                 {
+//                     name: 'Venezuela'
+//                 },
+//             ],
+//         }
+//     ]
+
+// {
+//     worldMap.map((item, idx) => {
+//         return (
+//             <>
+//                 <ListGroupItem key={idx}><h3>{item.continent} <span class="badge rounded-pill bg-secondary ml-3 text-light">{item.bonus}</span></h3></ListGroupItem>
+//                 <ListGroup>
+//                     {
+//                         item.map((i, key) => {
+//                             return (
+//                                 <ListGroupItem key={key}><h5>{i.territories}</h5></ListGroupItem>
+//                             )
+//                         })
+//                     }
+//                 </ListGroup>
+//             </>
+//         )
+//     })
+// }

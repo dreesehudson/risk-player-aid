@@ -9,6 +9,7 @@ export const factions =
             misslePower: null,
             weakness: null,
             privateMission: null,
+            bringerOfNuclearFire: false,
             unlocked: true,
             gameHistory: [
                 // array of objects including this info for each time the faction is played.
@@ -27,6 +28,7 @@ export const factions =
             misslePower: null,
             weakness: null,
             privateMission: null,
+            bringerOfNuclearFire: false,
             unlocked: true,
             gameHistory: [
                 // array of objects including this info for each time the faction is played.
@@ -40,11 +42,12 @@ export const factions =
         {
             name: "Khan Industries",
             color: "#545859",
-            startingPower: ["If your defense roll is two natural 6's, that territory cannot be attacked again for the rest of the turn.", "When drawing a territory card, you may place one troop into that territory, if you control it."],
+            startingPower: ["At the start of your turn, place one troop in each territory that has a HQ you control", "When drawing a territory card, you may place one troop into that territory, if you control it."],
             comebackPower: null,
             misslePower: null,
             weakness: null,
             privateMission: null,
+            bringerOfNuclearFire: false,
             unlocked: true,
             gameHistory: [
                 // array of objects including this info for each time the faction is played.
@@ -63,6 +66,7 @@ export const factions =
             misslePower: null,
             weakness: null,
             privateMission: null,
+            bringerOfNuclearFire: false,
             unlocked: true,
             gameHistory: [
                 // array of objects including this info for each time the faction is played.
@@ -81,6 +85,7 @@ export const factions =
             misslePower: null,
             weakness: null,
             privateMission: null,
+            bringerOfNuclearFire: false,
             unlocked: true,
             gameHistory: [
                 // array of objects including this info for each time the faction is played.
@@ -95,8 +100,7 @@ export const factions =
             name: "Mutants",
             color: "#FF5100",
             startingPower: "You don't lose troops in the fallout territory or from mutant event cards.",
-            bluePerk: "When attacking the Bringer of Nuclear Fire's troops., you may re-roll 1's on all attack dice until they are no longer 1's",
-            bluePerk2: "Bio-hazard and mercenary scar effects are reversed for you.",
+            comebackPower: ["When attacking the Bringer of Nuclear Fire's troops., you may re-roll 1's on all attack dice until they are no longer 1's", "Bio-hazard and mercenary scar effects are reversed for you."],
             weakness: null,
             privateMission: "Controlling all bio-hazard territories and the fallout territory earns you 1 Red Star.",
             unlocked: false,
@@ -115,6 +119,7 @@ export const factions =
             startingPower: "You do not lose troops when expanding into cities.",
             comebackPower: "When recruiting, you get 2 extra troops if you control Alien Island and 1 extra troop for each ruin you control.",
             privateMission: "Controlling every city on the board earns you 2 Red Stars.",
+            bringerOfNuclearFire: false,
             unlocked: false,
             gameHistory: [
                 // array of objects including this info for each time the faction is played.
