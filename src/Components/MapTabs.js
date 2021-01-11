@@ -61,7 +61,24 @@ const MapTabs = (props) => {
                 <TabPane tabId="2">
                     <Row>
                         <Col sm="12">
+                            <ListGroup className='list-group-flush'>
+                                {
+                                    props.players.map((player, idx) => {
+                                        return (
+                                            <>
+                                                <Button className='text-dark bg-light border-light'>
+                                                    <ListGroupItem key={idx} onClick={toggleCollapse}><h3>{player.name}</h3></ListGroupItem>
+                                                </Button>
+                                                <Collapse isOpen={isOpen}>
+                                                    <ListGroup>
 
+                                                    </ListGroup>
+                                                </Collapse>
+                                            </>
+                                        )
+                                    })
+                                }
+                            </ListGroup>
                         </Col>
                     </Row>
                 </TabPane>
