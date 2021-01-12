@@ -12,6 +12,8 @@ export const worldMap =
                     worldCapital: null,
                     ammoShortage: false,
                     bunker: false,
+                    mercenary: false,
+                    biohazard: true,
                     adjacent: ["North Africa", "East Africa, South Africa"]
                 },
                 {
@@ -22,6 +24,8 @@ export const worldMap =
                     worldCapital: null,
                     ammoShortage: false,
                     bunker: false,
+                    mercenary: true,
+                    biohazard: false,
                     adjacent: ["North Africa", "Middle East", "Egypt", "Congo", "South Africa", "Madagascar"]
                 },
                 {
@@ -31,7 +35,9 @@ export const worldMap =
                     majorCity: null,
                     worldCapital: null,
                     ammoShortage: false,
-                    bunker: false,
+                    bunker: true,
+                    mercenary: false,
+                    biohazard: false,
                     adjacent: ["North Africa", "Middle East", "Southern Europe", "East Africa"]
                 },
                 {
@@ -40,8 +46,10 @@ export const worldMap =
                     minorCity: null,
                     majorCity: null,
                     worldCapital: null,
-                    ammoShortage: false,
+                    ammoShortage: true,
                     bunker: false,
+                    mercenary: false,
+                    biohazard: false,
                     adjacent: ["Egypt", "Brazil", "Congo", "Madagascar", "Western Europe", "Southern Europe"]
                 },
                 {
@@ -52,6 +60,8 @@ export const worldMap =
                     worldCapital: null,
                     ammoShortage: false,
                     bunker: false,
+                    mercenary: false,
+                    biohazard: false,
                     adjacent: ["East Africa", "South Africa"]
                 },
                 {
@@ -62,6 +72,8 @@ export const worldMap =
                     worldCapital: null,
                     ammoShortage: false,
                     bunker: false,
+                    mercenary: false,
+                    biohazard: false,
                     adjacent: ["Madagascar", "Congo", "East Africa"]
                 },
             ],
@@ -78,6 +90,8 @@ export const worldMap =
                     worldCapital: null,
                     ammoShortage: false,
                     bunker: false,
+                    mercenary: false,
+                    biohazard: false,
                     adjacent: ["Russia", "India", "Middle East", "China", "Ural"]
                 },
                 {
@@ -88,6 +102,8 @@ export const worldMap =
                     worldCapital: null,
                     ammoShortage: false,
                     bunker: false,
+                    mercenary: false,
+                    biohazard: false,
                     adjacent: ["India", "Middle East", "Ural", "Southeast Asia", "Mongolia", "Siberia"]
                 },
                 {
@@ -98,6 +114,8 @@ export const worldMap =
                     worldCapital: null,
                     ammoShortage: false,
                     bunker: false,
+                    mercenary: false,
+                    biohazard: false,
                     adjacent: ["China", "Middle East", "Afganistan", "Southeast Asia"]
                 },
                 {
@@ -108,6 +126,8 @@ export const worldMap =
                     worldCapital: null,
                     ammoShortage: false,
                     bunker: false,
+                    mercenary: false,
+                    biohazard: false,
                     adjacent: ["Mongolia", "Siberia", "Yakutsk", "Kamchatka"]
                 },
                 {
@@ -118,6 +138,8 @@ export const worldMap =
                     worldCapital: null,
                     ammoShortage: false,
                     bunker: false,
+                    mercenary: false,
+                    biohazard: false,
                     adjacent: ["Kamchatka", "Mongolia"]
                 },
                 {
@@ -128,6 +150,8 @@ export const worldMap =
                     worldCapital: null,
                     ammoShortage: false,
                     bunker: false,
+                    mercenary: false,
+                    biohazard: false,
                     adjacent: ["Alaska", "Yakutsk", "Irkutsk", "Japan", "Mongolia"]
                 },
                 {
@@ -138,6 +162,8 @@ export const worldMap =
                     worldCapital: null,
                     ammoShortage: false,
                     bunker: false,
+                    mercenary: false,
+                    biohazard: false,
                     adjacent: ["Russia", "Egypt", "East Africa", "Southern Europe", "India", "Afganistan"]
                 },
                 {
@@ -148,6 +174,8 @@ export const worldMap =
                     worldCapital: null,
                     ammoShortage: false,
                     bunker: false,
+                    mercenary: false,
+                    biohazard: false,
                     adjacent: ["Japan", "Kamchatka", "Irkutsk", "Siberia", "China"]
                 },
                 {
@@ -158,6 +186,8 @@ export const worldMap =
                     worldCapital: null,
                     ammoShortage: false,
                     bunker: false,
+                    mercenary: false,
+                    biohazard: false,
                     adjacent: ["Ural", "China", "Mongolia", "Irkutsk", "Yakutsk"]
                 },
                 {
@@ -168,6 +198,8 @@ export const worldMap =
                     worldCapital: null,
                     ammoShortage: false,
                     bunker: false,
+                    mercenary: false,
+                    biohazard: false,
                     adjacent: ["Indonesia", "China", "India"]
                 },
                 {
@@ -178,6 +210,8 @@ export const worldMap =
                     worldCapital: null,
                     ammoShortage: false,
                     bunker: false,
+                    mercenary: false,
+                    biohazard: false,
                     adjacent: ["Russia", "China", "Siberia", "Afganistan"]
                 },
                 {
@@ -188,6 +222,8 @@ export const worldMap =
                     worldCapital: null,
                     ammoShortage: false,
                     bunker: false,
+                    mercenary: false,
+                    biohazard: false,
                     adjacent: ["Irkutsk", "Kamchatka", "Siberia"]
                 },
             ],
@@ -204,6 +240,8 @@ export const worldMap =
                     worldCapital: null,
                     ammoShortage: false,
                     bunker: false,
+                    mercenary: false,
+                    biohazard: false,
                     adjacent: ["New Guinea", "Western Australia"]
                 },
                 {
@@ -214,6 +252,8 @@ export const worldMap =
                     worldCapital: null,
                     ammoShortage: false,
                     bunker: false,
+                    mercenary: false,
+                    biohazard: false,
                     adjacent: ["New Guinea", "Western Australia", "Southeast Asia"]
                 },
                 {
@@ -224,6 +264,8 @@ export const worldMap =
                     worldCapital: null,
                     ammoShortage: false,
                     bunker: false,
+                    mercenary: false,
+                    biohazard: false,
                     adjacent: ["Eastern Australia", "Western Australia", "Indonesia"]
                 },
                 {
@@ -234,6 +276,8 @@ export const worldMap =
                     worldCapital: null,
                     ammoShortage: false,
                     bunker: false,
+                    mercenary: false,
+                    biohazard: false,
                     adjacent: ["Eastern Australia", "New Guinea", "Indonesia"]
                 },
             ],
@@ -250,6 +294,8 @@ export const worldMap =
                     worldCapital: null,
                     ammoShortage: false,
                     bunker: false,
+                    mercenary: false,
+                    biohazard: false,
                     adjacent: ["Iceland", "Western Europe", "Northern Europe", "Scandinavia"]
                 },
                 {
@@ -260,6 +306,8 @@ export const worldMap =
                     worldCapital: null,
                     ammoShortage: false,
                     bunker: false,
+                    mercenary: false,
+                    biohazard: false,
                     adjacent: ["Great Britain", "Greenland", "Scandinavia"]
                 },
                 {
@@ -270,6 +318,8 @@ export const worldMap =
                     worldCapital: null,
                     ammoShortage: false,
                     bunker: false,
+                    mercenary: false,
+                    biohazard: false,
                     adjacent: ["Great Britain", "Iceland", "Russia", "Northern Europe"]
                 },
                 {
@@ -280,6 +330,8 @@ export const worldMap =
                     worldCapital: null,
                     ammoShortage: false,
                     bunker: false,
+                    mercenary: false,
+                    biohazard: false,
                     adjacent: ["Scandinavia", "Ural", "Afganistan", "Middle East", "Southern Europe", "Northern Europe"]
                 },
                 {
@@ -290,6 +342,8 @@ export const worldMap =
                     worldCapital: null,
                     ammoShortage: false,
                     bunker: false,
+                    mercenary: false,
+                    biohazard: false,
                     adjacent: ["Scandinavia", "Southern Europe", "Western Europe", "Great Britain", "Russia"]
                 },
                 {
@@ -300,6 +354,8 @@ export const worldMap =
                     worldCapital: null,
                     ammoShortage: false,
                     bunker: false,
+                    mercenary: false,
+                    biohazard: false,
                     adjacent: ["Southern Europe", "Northern Europe", "Great Britain", "North Africa"]
                 },
                 {
@@ -310,6 +366,8 @@ export const worldMap =
                     worldCapital: null,
                     ammoShortage: false,
                     bunker: false,
+                    mercenary: false,
+                    biohazard: false,
                     adjacent: ["Northern Europe", "Western Europe", "North Africa", "Middle East", "Egypt", "Russia"]
                 },
             ],
@@ -326,6 +384,8 @@ export const worldMap =
                     worldCapital: null,
                     ammoShortage: false,
                     bunker: false,
+                    mercenary: false,
+                    biohazard: false,
                     adjacent: ["Kamchatka", "Northwest Territory", "Alberta"]
                 },
                 {
@@ -336,6 +396,8 @@ export const worldMap =
                     worldCapital: null,
                     ammoShortage: false,
                     bunker: false,
+                    mercenary: false,
+                    biohazard: false,
                     adjacent: ["Alaska", "Northwest Territory", "Ontario", "Western United States"]
                 },
                 {
@@ -346,6 +408,8 @@ export const worldMap =
                     worldCapital: null,
                     ammoShortage: false,
                     bunker: false,
+                    mercenary: false,
+                    biohazard: false,
                     adjacent: ["Eastern United States", "Western United States", "Venezuela"]
                 },
                 {
@@ -356,6 +420,8 @@ export const worldMap =
                     worldCapital: null,
                     ammoShortage: false,
                     bunker: false,
+                    mercenary: false,
+                    biohazard: false,
                     adjacent: ["Greenland", "Ontario", "Eastern United States"]
                 },
                 {
@@ -366,6 +432,8 @@ export const worldMap =
                     worldCapital: null,
                     ammoShortage: false,
                     bunker: false,
+                    mercenary: false,
+                    biohazard: false,
                     adjacent: ["Eastern Canada", "Ontario", "Western United States", "Central America"]
                 },
                 {
@@ -376,6 +444,8 @@ export const worldMap =
                     worldCapital: null,
                     ammoShortage: false,
                     bunker: false,
+                    mercenary: false,
+                    biohazard: false,
                     adjacent: ["Eastern Canada", "Ontario", "Iceland", "Northwest Territory"]
                 },
                 {
@@ -386,6 +456,8 @@ export const worldMap =
                     worldCapital: null,
                     ammoShortage: false,
                     bunker: false,
+                    mercenary: false,
+                    biohazard: false,
                     adjacent: ["Greenland", "Northwest Territory", "Alberta", "Western United States", "Eastern United States", "Eastern Canada"]
                 },
                 {
@@ -396,6 +468,8 @@ export const worldMap =
                     worldCapital: null,
                     ammoShortage: false,
                     bunker: false,
+                    mercenary: false,
+                    biohazard: false,
                     adjacent: ["Greenland", "Alaska", "Alberta", "Ontario"]
                 },
                 {
@@ -406,6 +480,8 @@ export const worldMap =
                     worldCapital: null,
                     ammoShortage: false,
                     bunker: false,
+                    mercenary: false,
+                    biohazard: false,
                     adjacent: ["Alberta", "Eastern United States", "Central America", "Ontario"]
                 },
             ],
@@ -422,6 +498,8 @@ export const worldMap =
                     worldCapital: null,
                     ammoShortage: false,
                     bunker: false,
+                    mercenary: false,
+                    biohazard: false,
                     adjacent: ["Brazil", "Peru"]
                 },
                 {
@@ -432,6 +510,8 @@ export const worldMap =
                     worldCapital: null,
                     ammoShortage: false,
                     bunker: false,
+                    mercenary: false,
+                    biohazard: false,
                     adjacent: ["North Africa", "Peru", "Argentina", "Venezuela"]
                 },
                 {
@@ -442,6 +522,8 @@ export const worldMap =
                     worldCapital: null,
                     ammoShortage: false,
                     bunker: false,
+                    mercenary: false,
+                    biohazard: false,
                     adjacent: ["Brazil", "Argentina", "Venezuela"]
                 },
                 {
@@ -452,6 +534,8 @@ export const worldMap =
                     worldCapital: null,
                     ammoShortage: false,
                     bunker: false,
+                    mercenary: false,
+                    biohazard: false,
                     adjacent: ["Brazil", "Peru", "Central America"]
                 },
             ],
@@ -467,6 +551,8 @@ export const worldMap =
         //             majorCity: null,
         //             ammoShortage: false,
         //             bunker: false,
+        //             mercenary: false,
+        //             biohazard: false,
         //             adjacent: []
         //         },
         //     ],

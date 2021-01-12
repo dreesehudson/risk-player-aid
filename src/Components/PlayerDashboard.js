@@ -1,25 +1,12 @@
 import React, { useState } from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBan, faDice } from '@fortawesome/free-solid-svg-icons'
-import { Card, Button, CardTitle, Row, Col, Modal, ModalHeader, ModalBody, ModalFooter, Input, Label, Container } from 'reactstrap';
-import { faFortAwesomeAlt } from '@fortawesome/free-brands-svg-icons'
+import { Card, CardTitle, Row, Col, Container } from 'reactstrap';
 import RedStarTracker from './RedStarTracker'
 import Recruitment from './Recruitment'
-import { worldMap } from '../utilities/territories'
-import Select from "react-select";
 import MapTabs from './MapTabs';
-import Odds from './Odds';
 
 const Body = (props) => {
-    const [battleground, setBattleground] = useState('');
-    const [attackingFrom, setAttackingFrom] = useState('');
-    const [modal, setModal] = useState(false);
     {/* players will need to be moved to a useContext helper that is populated from Austin's new game modal */ }
     const [players, setPlayers] = useState([{ id: 1, name: "Player 1" }, { id: 2, name: "Player 2" }, { id: 3, name: 'Player 3' }]);
-    const { className } = props;
-    const toggle = () => setModal(!modal);
-
-
 
     //map through each continent within the territories JSON
     //return array of territories objects
@@ -60,7 +47,7 @@ const Body = (props) => {
                     </Row>
                 </Col>
             </Row>
-        </Container >
+        </Container>
     );
 };
 

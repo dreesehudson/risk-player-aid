@@ -1,15 +1,19 @@
 import React, { useState } from 'react';
-import { TabContent, TabPane, Nav, NavItem, NavLink, Row, Col, ListGroup, ListGroupItem, Button, Collapse } from 'reactstrap';
+import { TabContent, TabPane, Nav, NavItem, NavLink, Row, Col, ListGroup, ListGroupItem, Button, Collapse, Card, CardHeader, CardBody, Badge } from 'reactstrap';
 import { worldMap } from '../utilities/territories'
 import classnames from 'classnames';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faDiceD6 } from '@fortawesome/free-solid-svg-icons'
+import CombatRoll from './CombatRoll';
+import AmmoShortage from './AmmoShortage';
+import HQ from './HQ';
+import Bunker from './Bunker';
+import Mercenary from './Mercenary';
+import BioHazard from './BioHazard';
 
 const MapTabs = (props) => {
     const [activeTab, setActiveTab] = useState('1');
     const toggle = tab => { if (activeTab !== tab) setActiveTab(tab); }
     const [isOpen, setIsOpen] = useState(false);
-    const toggleCollapse = () => setIsOpen(!isOpen);
+    const [toggleCollapse, setToggleCollapse] = useState();
 
     return (
         <>
@@ -25,60 +29,63 @@ const MapTabs = (props) => {
                 <TabPane tabId="1">
                     <Row>
                         <Col sm="12">
-                            <ListGroup className='list-group-flush'>
-                                {
-                                    worldMap.map((item, idx) => {
-                                        return (
-                                            <>
-                                                <Button className='text-dark bg-light border-light'>
-                                                    <ListGroupItem key={idx} onClick={toggleCollapse}><h3>{item.continent} <span class="badge text-light rounded-pill bg-secondary ml-3">{item.bonus}</span></h3></ListGroupItem>
-                                                </Button>
-                                                <Collapse isOpen={isOpen}>
+                            {
+                                worldMap.map((item, idx) => {
+                                    return (
+                                        <>
+                                            <Card key={idx}>
+                                                <CardHeader onClick={() => setToggleCollapse(idx)}>
+                                                    <h5>{item.continent} <Badge className="text-light rounded-pill bg-secondary ml-3">{item.bonus}</Badge></h5>
+                                                </CardHeader>
+                                                <Collapse isOpen={toggleCollapse === idx ? true : false}>
                                                     <ListGroup>
                                                         {
                                                             item.territories.map((i, key) => {
                                                                 return (
                                                                     <ListGroupItem key={key}>
-                                                                        <>
-                                                                            <h5>
-                                                                                {i.name}<span><Button className='bg-light'><FontAwesomeIcon className='fa-2x text-dark' icon={faDiceD6} /></Button></span>
-                                                                            </h5>
-                                                                        </>
+                                                                        <h5>
+                                                                            {i.name}
+                                                                            <HQ hq={i.hq} />
+                                                                            <Bunker bunker={i.bunker} />
+                                                                            <AmmoShortage ammoShortage={i.ammoShortage} />
+                                                                            <Mercenary mercenary={i.mercenary} />
+                                                                            <BioHazard bioHazard={i.bioHazard} />
+                                                                            <CombatRoll />
+                                                                        </h5>
                                                                     </ListGroupItem>
                                                                 )
                                                             })
                                                         }
                                                     </ListGroup>
                                                 </Collapse>
-                                            </>
-                                        )
-                                    })
-                                }
-                            </ListGroup>
+                                            </Card>
+                                        </>
+                                    )
+                                })
+                            }
                         </Col>
                     </Row>
                 </TabPane>
                 <TabPane tabId="2">
                     <Row>
                         <Col sm="12">
-                            <ListGroup className='list-group-flush'>
-                                {
-                                    props.players.map((player, idx) => {
-                                        return (
-                                            <>
-                                                <Button className='text-dark bg-light border-light'>
-                                                    <ListGroupItem key={idx} onClick={toggleCollapse}><h3>{player.name}</h3></ListGroupItem>
-                                                </Button>
-                                                <Collapse isOpen={isOpen}>
+                            {
+                                props.players.map((player, idx) => {
+                                    return (
+                                        <>
+                                            <Card key={idx}>
+                                                <CardHeader onClick={() => setToggleCollapse(idx)}>
+                                                    <h5>{player.name}</h5>
+                                                </CardHeader>
+                                                <Collapse isOpen={toggleCollapse === idx ? true : false}>
                                                     <ListGroup>
-
                                                     </ListGroup>
                                                 </Collapse>
-                                            </>
-                                        )
-                                    })
-                                }
-                            </ListGroup>
+                                            </Card>
+                                        </>
+                                    )
+                                })
+                            }
                         </Col>
                     </Row>
                 </TabPane>

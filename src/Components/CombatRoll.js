@@ -1,12 +1,24 @@
+import React, { useState } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faDiceD6 } from '@fortawesome/free-solid-svg-icons'
+import { Button, Row, Col, Modal, ModalHeader, ModalBody, ModalFooter, Input, Label } from 'reactstrap';
+import { worldMap } from '../utilities/territories'
+import Select from "react-select";
+import Bunker from './Bunker';
+import AmmoShortage from './AmmoShortage';
+import Odds from './Odds';
 
-
-<Col>
-    <Card body>
-        {/* Combat Modal */}
-        <CardTitle tag="h5">Combat Roll</CardTitle>
+const CombatRoll = (props) => {
+    const [battleground, setBattleground] = useState('');
+    const [attackingFrom, setAttackingFrom] = useState('');
+    const [modal, setModal] = useState(false);
+    {/* players will need to be moved to a useContext helper that is populated from Austin's new game modal */ }
+    const { className } = props;
+    const toggle = () => setModal(!modal);
+    return (
         <>
-            <Button className='mx-auto my-1 p-2' onClick={toggle}>
-                <FontAwesomeIcon className='mx-2 p-0 fa-3x text-light' icon={faDice} />
+            <Button className='mx-3 bg-white border-0' onClick={toggle}>
+                <FontAwesomeIcon className='p-0 fa-2x text-dark' icon={faDiceD6} />
             </Button>
             <Modal isOpen={modal} size='lg' toggle={toggle} className={className}>
                 <ModalHeader toggle={toggle}></ModalHeader>
@@ -58,18 +70,12 @@
                         </Row>
                         <Row>
                             <Col className='justify-content-center col-6'>
-                                {
-                                    battleground.bunker ?
-                                        <FontAwesomeIcon className='m-2 mt-3 fa-3x' color={'#F18F01'} icon={faFortAwesomeAlt} />
-                                        :
-                                        <FontAwesomeIcon className='m-2 mt-3 fa-3x' icon={faFortAwesomeAlt} />
-                                }
-                                {
-                                    battleground.ammoShortage ?
-                                        <FontAwesomeIcon className='m-2 mt-3 fa-3x' color={'red'} icon={faBan} />
-                                        :
-                                        <FontAwesomeIcon className='m-2 mt-3 fa-3x' icon={faBan} />
-                                }
+                                <Bunker
+                                    battleground={battleground}
+                                />
+                                <AmmoShortage
+                                    battleground={battleground}
+                                />
                             </Col>
                             <Col className='col-6'>
                             </Col>
@@ -82,5 +88,7 @@
                 </ModalFooter>
             </Modal>
         </>
-    </Card>
-</Col>
+    )
+}
+
+export default CombatRoll
