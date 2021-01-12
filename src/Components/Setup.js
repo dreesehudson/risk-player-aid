@@ -1,23 +1,44 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import { Row, Card, CardHeader, Container, Col, CardBody, Button, Label, Input } from 'reactstrap';
 import { factions } from '../utilities/factions'
-import PlayerDashboard from './PlayerDashboard';
+import playerContext from '../utilities/PlayerContext';
 
 const Setup = (props) => {
     const [draft, setDraft] = useState(false)
-    const [numberOfPlayers, setNumberOfPlayers] = useState(3)
+
+    const { players, addPlayer, removePlayer } = useContext(playerContext)
+
+
+
+
     return (
         <Container className='mt-3'>
             {/* # of Players */}
             <Row className='justify-content-center my-3'>
-                    <Button className='mx-2 p-1 btn-sm'>-</Button>
-                    <h4>{numberOfPlayers}</h4>
-                    <Button className='mx-2 p-1 btn-sm'>+</Button>
+                <h3 className='mr-2'>Number of Players:</h3>
+                {
+                    players.length > 3 ?
+                        <Button onClick={() => removePlayer()} className='mx-2 p-2'>-</Button>
+                        :
+                        <Button disabled className='mx-2 p-2'>-</Button>
+                }
+                <h3 className='my-1'>{players.length}</h3>
+                {
+                    players.length < 5 ?
+                        <Button onClick={() => addPlayer()} className='mx-2 p-2'>+</Button>
+                        :
+                        <Button disabled className='mx-2 p-2'>+</Button>
+                }
+
             </Row>
             {/* Names of Players */}
-            <Row className='justify-content-center'>
-                <Label>Name:</Label>
-                <Input/>
+            <Row>
+                {
+                    <Col className='col-3'>
+                        <Label>Name:</Label>
+                        <Input />
+                    </Col>
+                }
             </Row>
             {
                 draft ?
@@ -62,7 +83,7 @@ const Setup = (props) => {
             </Row>
             <Row>
                 {
-                    
+
                 }
             </Row>
 
