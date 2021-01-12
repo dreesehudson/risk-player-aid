@@ -1,9 +1,6 @@
-import React, { useState } from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBan, faDice } from '@fortawesome/free-solid-svg-icons'
+import React, {  } from 'react'
+import {  } from '@fortawesome/react-fontawesome'
 import { Card, CardTitle, ListGroup, ListGroupItem, Row, Col, Badge, Container } from 'reactstrap';
-import { faFortAwesomeAlt } from '@fortawesome/free-brands-svg-icons'
-import { territories } from '../utilities/territories'
 
 function Recruitment(props) {
     return (

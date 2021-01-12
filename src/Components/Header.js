@@ -1,8 +1,5 @@
 import React, { useState } from 'react';
 import { Collapse, Button, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faDice, faChessPawn, faGlobeAmericas, faCog, faRocket } from '@fortawesome/free-solid-svg-icons'
-import { faMap } from '@fortawesome/free-solid-svg-icons'
 
 
 const Header = (props) => {
