@@ -57,8 +57,14 @@ const Setup = (props) => {
                 }
             </Row>
             {
-                playersLocked ?
+                !playersLocked ?
                     <>
+                    {/* Submit button to lock in the player names */}
+                    <Button className='my-3' onClick={() => setPlayersLocked(true)}>Submit</Button>
+                    </>
+                    :
+                    <>
+                    {/* If draft has been unlocked (via founding all minor cities) then draft process commence, else pick in pre-determined order */}
                         {
                             draft ?
                                 //show draft cards and snake draft for Faction, Turn Order, HQ Placement Order, Starting Troops, Coin Cards
@@ -105,10 +111,6 @@ const Setup = (props) => {
 
                             }
                         </Row>
-                    </>
-                    :
-                    <>
-                    <Button className='my-3' onClick={() => setPlayersLocked(true)}>Submit</Button>
                     </>
             }
 

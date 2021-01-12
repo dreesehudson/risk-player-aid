@@ -14,6 +14,16 @@ const MapTabs = (props) => {
     const toggle = tab => { if (activeTab !== tab) setActiveTab(tab); }
     const [toggleCollapse, setToggleCollapse] = useState(-1);
 
+    function toggleAccordian(id) {
+        if (toggleCollapse == id) {
+            setToggleCollapse(-1)
+        }
+        else {
+            setToggleCollapse(id)
+        }
+    }
+
+
     return (
         <>
             <Nav tabs>
@@ -33,7 +43,7 @@ const MapTabs = (props) => {
                                     return (
                                         <>
                                             <Card key={idx}>
-                                                <CardHeader onClick={() => setToggleCollapse(idx)}>
+                                                <CardHeader onClick={() => toggleAccordian(idx)}>
                                                     <h5>{item.continent} <Badge className="text-light rounded-pill bg-secondary ml-3">{item.bonus}</Badge></h5>
                                                 </CardHeader>
                                                 <Collapse isOpen={toggleCollapse === idx ? true : false}>
