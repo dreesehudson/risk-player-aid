@@ -26,41 +26,18 @@ const Header = (props) => {
             </NavItem>
             <NavItem className='m-2'>
               <NavLink>
-                <Button>
+                <Button href='/setup'>
                   <h6>New Game</h6>
                 </Button>
               </NavLink>
             </NavItem>
-            {/* <NavItem>
+            <NavItem className='m-2'>
               <NavLink>
-                <FontAwesomeIcon className='mx-2 fa-3x text-light' icon={faDice} />
+                <Button href='/unlockables'>
+                  <h6>Unlockables</h6>
+                </Button>
               </NavLink>
             </NavItem>
-            <NavItem>
-              <NavLink>
-                <FontAwesomeIcon className='mx-2 fa-3x text-light' icon={faChessPawn} />
-              </NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink>
-                <FontAwesomeIcon className='mx-2 fa-3x text-light' icon={faGlobeAmericas} />
-              </NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink>
-                <FontAwesomeIcon className='mx-2 fa-3x text-light' icon={faMap} />
-              </NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink>
-                <FontAwesomeIcon className='mx-2 fa-3x text-light' icon={faCog} />
-              </NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink>
-                <FontAwesomeIcon className='mx-2 fa-3x text-light' icon={faRocket} />
-              </NavLink>
-            </NavItem> */}
           </Nav>
         </Collapse>
       </Navbar>

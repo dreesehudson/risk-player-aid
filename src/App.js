@@ -3,6 +3,7 @@ import './App.css';
 import Header from './Components/Header'
 import PlayerDashboard from './Components/PlayerDashboard'
 import Setup from './Components/Setup'
+import Unlockables from './Components/Unlockables'
 import Footer from './Components/Footer'
 import {
   BrowserRouter as Router,
@@ -21,6 +22,9 @@ function App() {
           </Route>
           <Route path="/setup">
             <Setup />
+          </Route>
+          <Route path="/unlockables">
+            <Unlockables />
           </Route>
         </Switch>
 

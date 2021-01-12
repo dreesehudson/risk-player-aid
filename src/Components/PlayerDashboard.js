@@ -4,7 +4,7 @@ import RedStarTracker from './RedStarTracker'
 import Recruitment from './Recruitment'
 import MapTabs from './MapTabs';
 
-const Body = (props) => {
+const PlayerDashboard = (props) => {
     {/* players will need to be moved to a useContext helper that is populated from Austin's new game modal */ }
     const [players, setPlayers] = useState([{ id: 1, name: "Player 1" }, { id: 2, name: "Player 2" }, { id: 3, name: 'Player 3' }]);
 
@@ -51,4 +51,4 @@ const Body = (props) => {
     );
 };
 
-export default Body;
+export default PlayerDashboard;
