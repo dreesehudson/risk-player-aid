@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { TabContent, TabPane, Nav, NavItem, NavLink, Row, Col, ListGroup, ListGroupItem, Button, Collapse, Card, CardHeader, CardBody, Badge } from 'reactstrap';
+import { TabContent, TabPane, Nav, NavItem, NavLink, Row, Col, ListGroup, ListGroupItem, Collapse, Card, CardHeader, Badge } from 'reactstrap';
 import { worldMap } from '../utilities/territories'
 import classnames from 'classnames';
 import CombatRoll from './CombatRoll';
@@ -12,8 +12,7 @@ import BioHazard from './BioHazard';
 const MapTabs = (props) => {
     const [activeTab, setActiveTab] = useState('1');
     const toggle = tab => { if (activeTab !== tab) setActiveTab(tab); }
-    const [isOpen, setIsOpen] = useState(false);
-    const [toggleCollapse, setToggleCollapse] = useState();
+    const [toggleCollapse, setToggleCollapse] = useState(-1);
 
     return (
         <>
