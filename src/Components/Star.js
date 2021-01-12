@@ -3,7 +3,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar } from '@fortawesome/free-solid-svg-icons'
 
 export default function RedStarTracker() {
-    const [color, setColor] = useState()
     const [clicked, setClicked] = useState(false)
 
     return (

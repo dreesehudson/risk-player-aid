@@ -1,11 +1,12 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import { Row, Card, CardHeader, Container, Col, CardBody, Button, Label, Input } from 'reactstrap';
 import { factions } from '../utilities/factions'
+import playerContext from '../utilities/PlayerContext';
 
 const Setup = (props) => {
     const [draft, setDraft] = useState(false)
-    const [numberOfPlayers, setNumberOfPlayers] = useState(3)
 
+    const { players, addPlayer, removePlayer } = useContext(playerContext)
 
 
 
@@ -16,15 +17,15 @@ const Setup = (props) => {
             <Row className='justify-content-center my-3'>
                 <h3 className='mr-2'>Number of Players:</h3>
                 {
-                    numberOfPlayers > 3 ?
-                        <Button onClick={() => setNumberOfPlayers(numberOfPlayers - 1)} className='mx-2 p-2'>-</Button>
+                    players.length > 3 ?
+                        <Button onClick={() => removePlayer()} className='mx-2 p-2'>-</Button>
                         :
                         <Button disabled className='mx-2 p-2'>-</Button>
                 }
-                <h3 className='my-1'>{numberOfPlayers}</h3>
+                <h3 className='my-1'>{players.length}</h3>
                 {
-                    numberOfPlayers < 5 ?
-                        <Button onClick={() => setNumberOfPlayers(numberOfPlayers + 1)} className='mx-2 p-2'>+</Button>
+                    players.length < 5 ?
+                        <Button onClick={() => addPlayer()} className='mx-2 p-2'>+</Button>
                         :
                         <Button disabled className='mx-2 p-2'>+</Button>
                 }

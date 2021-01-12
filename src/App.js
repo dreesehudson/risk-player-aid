@@ -10,25 +10,28 @@ import {
   Switch,
   Route
 } from "react-router-dom";
+import { AppProvider } from './utilities/PlayerContext';
 
 function App() {
   return (
+
     <div className="App">
       <Router>
-        <Header />
-        <Switch>
-          <Route path="/game">
-            <PlayerDashboard />
-          </Route>
-          <Route path="/setup">
-            <Setup />
-          </Route>
-          <Route path="/unlockables">
-            <Unlockables />
-          </Route>
-        </Switch>
-
-        <Footer/>
+        <AppProvider>
+          <Header />
+          <Switch>
+            <Route path="/game">
+              <PlayerDashboard />
+            </Route>
+            <Route path="/setup">
+              <Setup />
+            </Route>
+            <Route path="/unlockables">
+              <Unlockables />
+            </Route>
+          </Switch>
+          <Footer />
+        </AppProvider>
       </Router>
     </div>
   );
