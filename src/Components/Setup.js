@@ -64,6 +64,7 @@ const Setup = (props) => {
                     </>
                     :
                     <>
+                    <Button className='my-3' onClick={() => setPlayersLocked(false)}>Go Back</Button>
                     {/* If draft has been unlocked (via founding all minor cities) then draft process commence, else pick in pre-determined order */}
                         {
                             draft ?
