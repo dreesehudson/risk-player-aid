@@ -10,7 +10,7 @@ import {
   Switch,
   Route
 } from "react-router-dom";
-import { AppProvider } from './utilities/PlayerContext';
+import { AppProvider } from './utilities/DataContext';
 
 function App() {
   return (

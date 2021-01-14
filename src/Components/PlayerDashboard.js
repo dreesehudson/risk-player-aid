@@ -3,14 +3,14 @@ import { Card, CardTitle, Row, Col, Container } from 'reactstrap';
 import RedStarTracker from './RedStarTracker'
 import Recruitment from './Recruitment'
 import MapTabs from './MapTabs';
-import playerContext from '../utilities/PlayerContext';
+import DataContext from '../utilities/DataContext';
 
 const PlayerDashboard = (props) => {
 
     //map through each continent within the territories JSON
     //return array of territories objects
 
-    const { players } = useContext(playerContext)
+    const { players } = useContext(DataContext)
 
 
     return (
