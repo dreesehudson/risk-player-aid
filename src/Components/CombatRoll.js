@@ -1,12 +1,13 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faDiceD6 } from '@fortawesome/free-solid-svg-icons'
 import { Button, Row, Col, Modal, ModalHeader, ModalBody, ModalFooter, Input, Label } from 'reactstrap';
-import { worldMap } from '../utilities/territories'
 import Select from "react-select";
 import Bunker from './Bunker';
 import AmmoShortage from './AmmoShortage';
 import Odds from './Odds';
+import DataContext from '../utilities/DataContext';
+
 
 const CombatRoll = (props) => {
     const [battleground, setBattleground] = useState('');
@@ -15,6 +16,9 @@ const CombatRoll = (props) => {
     {/* players will need to be moved to a useContext helper that is populated from Austin's new game modal */ }
     const { className } = props;
     const toggle = () => setModal(!modal);
+    const { territories, setTerritories } = useContext(DataContext)
+
+
     return (
         <>
             <Button className='mx-3 bg-white border-0' onClick={toggle}>
@@ -32,7 +36,7 @@ const CombatRoll = (props) => {
                                     className="text-dark"
                                     defaultValue={'Select...'}
                                     onChange={setBattleground}
-                                    options={worldMap}
+                                    options={territories}
                                 />
                             </Col>
                             <Col className="justify-content-center">
@@ -43,7 +47,7 @@ const CombatRoll = (props) => {
                                         defaultValue={'Select Battleground First'}
                                         onChange={setAttackingFrom}
                                         //needs to only display the adjacent territories to the selected battleground (part of the territory object)
-                                        options={worldMap}
+                                        options={territories}
                                     />
                                     :
                                     <Select
@@ -52,7 +56,7 @@ const CombatRoll = (props) => {
                                         defaultValue={'Pick Battleground'}
                                         onChange={setAttackingFrom}
                                         //needs to only display the adjacent territories to the selected battleground (part of the territory object)
-                                        options={worldMap}
+                                        options={territories}
                                     />
 
                                 }

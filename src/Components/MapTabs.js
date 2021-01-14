@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { TabContent, TabPane, Nav, NavItem, NavLink, Row, Col, ListGroup, ListGroupItem, Collapse, Card, CardHeader, Badge } from 'reactstrap';
-import { worldMap } from '../utilities/territories'
 import classnames from 'classnames';
 import CombatRoll from './CombatRoll';
 import AmmoShortage from './AmmoShortage';
@@ -8,11 +7,14 @@ import HQ from './HQ';
 import Bunker from './Bunker';
 import Mercenary from './Mercenary';
 import BioHazard from './BioHazard';
+import DataContext from '../utilities/DataContext';
 
 const MapTabs = (props) => {
     const [activeTab, setActiveTab] = useState('1');
     const toggle = tab => { if (activeTab !== tab) setActiveTab(tab); }
     const [toggleCollapse, setToggleCollapse] = useState(-1);
+    const { regions, setRegions } = useContext(DataContext)
+    
 
     function toggleAccordian(id) {
         if (toggleCollapse == id) {
@@ -39,17 +41,17 @@ const MapTabs = (props) => {
                     <Row>
                         <Col sm="12">
                             {
-                                worldMap.map((item, idx) => {
+                                regions.map((region, idx) => {
                                     return (
                                         <>
                                             <Card key={idx}>
                                                 <CardHeader onClick={() => toggleAccordian(idx)}>
-                                                    <h5>{item.continent} <Badge className="text-light rounded-pill bg-secondary ml-3">{item.bonus}</Badge></h5>
+                                                    <h5>{region.continent} <Badge className="text-light rounded-pill bg-secondary ml-3">{region.bonus}</Badge></h5>
                                                 </CardHeader>
                                                 <Collapse isOpen={toggleCollapse === idx ? true : false}>
                                                     <ListGroup>
                                                         {
-                                                            item.territories.map((i, key) => {
+                                                            region.territories.map((i, key) => {
                                                                 return (
                                                                     <ListGroupItem key={key}>
                                                                         <h5>

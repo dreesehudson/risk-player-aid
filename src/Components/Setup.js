@@ -1,13 +1,13 @@
 import React, { useState, useContext } from 'react'
 import { Row, Card, CardHeader, Container, Col, CardBody, Button, Label, Input } from 'reactstrap';
-import { factions } from '../utilities/factions'
-import playerContext from '../utilities/PlayerContext';
+import DataContext from '../utilities/DataContext';
 
 const Setup = (props) => {
     const [draft, setDraft] = useState(false)
 
-    const { players, setPlayers } = useContext(playerContext)
-    const [numberOfPlayers, setNumberOfPlayers] = useState(3)
+    const { players, setPlayers } = useContext(DataContext)
+    const { factions, setFactions } = useContext(DataContext)
+    const [numberOfPlayers, setNumberOfPlayers] = useState(5)
     const [playersLocked, setPlayersLocked] = useState(false)
 
     function addPlayer() {
@@ -80,12 +80,12 @@ const Setup = (props) => {
                         }
                         <Row>
                             {
-                                factions.map((faction, idx) => {
+                                factions.map((faction, key) => {
                                     return (
                                         <>
                                             {
                                                 faction.unlocked &&
-                                                <Col className='col-6 mb-3' >
+                                                <Col key={key} className='col-6 mb-3' >
                                                     <Card>
                                                         <CardHeader>{faction.name}</CardHeader>
                                                         <CardBody>

@@ -10,7 +10,7 @@ const Header = (props) => {
   return (
     <div>
       <Navbar color="dark" light expand="md">
-        <NavbarBrand className='text-light' href="/">Risk Companion</NavbarBrand>
+        <NavbarBrand className='text-light' href="/">Risk Legacy Helper</NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="ml-auto" navbar>
