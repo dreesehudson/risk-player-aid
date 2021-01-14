@@ -23,24 +23,22 @@ const CombatRoll = (props) => {
         let attDice = []
         let defDice = []
         for (let i = 0; i < att; i++) {
-          attDice.push(Math.ceil(Math.random() * 6))
+            attDice.push(Math.ceil(Math.random() * 6))
         }
-      
+
         for (let j = 0; j < def; j++) {
-          defDice.push(Math.ceil(Math.random() * 6))
+            defDice.push(Math.ceil(Math.random() * 6))
         }
-      
+
         // //___sort results___
-        attDice.sort(function(a, b){
-          return b - a;
+        attDice.sort(function (a, b) {
+            return b - a;
         })
-      
-        defDice.sort(function(a, b){
-          return b - a;
+
+        defDice.sort(function (a, b) {
+            return b - a;
         })
-      
-      
-        
+
         //____die modifiers____
         //      Scar: bunker: +1 to the defenders high die
         //      Scar: ammoShortage: -1 to the defenders high die
@@ -55,23 +53,32 @@ const CombatRoll = (props) => {
         //      misslePower: EMP, activate before a combat roll, Dice rolled for combat in that territory can't be modified for the rest of the turn
         //      mutantPower: Unnatural Strength: When attacking, your 6's beat defenders 6's
         //      mutantPower: Unstable Cloning: When defending: if you roll natural doubles, add 1 add'l defending troop to the territory if you still own it after the battle
-        
+
         //___re-sort if necessary___and compare
-        attDice.sort(function(a, b){
-          return b - a;
+        attDice.sort(function (a, b) {
+            return b - a;
         })
-      
-        defDice.sort(function(a, b){
-          return b - a;
+
+        defDice.sort(function (a, b) {
+            return b - a;
         })
-      
+
         console.log(attDice);
         console.log(defDice);
-      
 
-
+        if ((defDice[0] >= attDice[0]) && (defDice[1] >= attDice[1])) {
+            //defender kills 2 attackers
+            return ("Attacker Loses 2");
+        }
+        else if ((defDice[0] < attDice[0]) && (defDice[1] < attDice[1])) {
+            //attacker kills 2 defenders
+            return ("Defender Loses 2");
+        }
+        else {
+            //each lose 1
+            return ("Attacker and Defender each lose 1");
+        }
     }
-
 
 
     return (
