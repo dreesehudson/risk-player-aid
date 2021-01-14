@@ -24,6 +24,13 @@ const Setup = (props) => {
         setPlayers(proxy)
     }
 
+    function submitPlayers(){
+        //disable player name inputs and open drafting choices
+        setPlayersLocked(true)
+        //assign player names to context hook
+        setPlayers()
+    }
+
     return (
         <Container className='mt-3'>
             {/* # of Players */}
@@ -60,7 +67,7 @@ const Setup = (props) => {
                 !playersLocked ?
                     <>
                     {/* Submit button to lock in the player names */}
-                    <Button className='my-3' onClick={() => setPlayersLocked(true)}>Submit</Button>
+                    <Button className='my-3' onClick={() => submitPlayers()}>Submit</Button>
                     </>
                     :
                     <>
