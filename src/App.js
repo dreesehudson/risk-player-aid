@@ -5,6 +5,7 @@ import PlayerDashboard from './Components/PlayerDashboard'
 import Setup from './Components/Setup'
 import Unlockables from './Components/Unlockables'
 import Footer from './Components/Footer'
+import Rooms from './Components/Rooms'
 import {
   BrowserRouter as Router,
   Switch,
@@ -28,6 +29,9 @@ function App() {
             </Route>
             <Route path="/unlockables">
               <Unlockables />
+            </Route>
+            <Route path="/rooms">
+              <Rooms />
             </Route>
           </Switch>
           <Footer />

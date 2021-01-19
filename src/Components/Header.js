@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Collapse, Button, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
+import { Collapse, Button, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink, NavbarText } from 'reactstrap';
 
 
 const Header = (props) => {
@@ -35,10 +35,17 @@ const Header = (props) => {
                 </Button>
               </NavLink>
             </NavItem>
+            <NavItem className='m-2'>
+            <NavLink>
+              <Button href='/rooms'>
+                <h6>Room: XXXX</h6>
+              </Button>
+            </NavLink>
+            </NavItem>
           </Nav>
         </Collapse>
       </Navbar>
-    </div>
+    </div >
   );
 }
 
