@@ -9,9 +9,9 @@ export default function RedStarTracker() {
         <>
             {
                 clicked ?
-                    <FontAwesomeIcon className='mx-2 fa-2x' color='red' onClick={() => setClicked(!clicked)} icon={faStar} />
+                    <FontAwesomeIcon className='mx-1 fa-lg' color='red' onClick={() => setClicked(!clicked)} icon={faStar} />
                     :
-                    <FontAwesomeIcon className='mx-2 fa-2x' onClick={() => setClicked(!clicked)} icon={faStar} />
+                    <FontAwesomeIcon className='mx-1 fa-lg' onClick={() => setClicked(!clicked)} icon={faStar} />
             }
         </>
     )

@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react'
-import { Card, CardTitle, Row, Col, Container } from 'reactstrap';
+import { Card, CardTitle, Row, Col, Container, CardGroup, CardDeck, Button } from 'reactstrap';
 import RedStarTracker from './RedStarTracker'
 import Recruitment from './Recruitment'
 import MapTabs from './MapTabs';
@@ -15,38 +15,34 @@ const PlayerDashboard = (props) => {
 
     return (
         <Container className='mt-3'>
-            <Row>
-                <Col>
-                    <Card>
-                        <Row className="my-3 justify-content-center">
-                            {players.map((item, idx) => {
-                                return (
-                                    <Col key={idx} className='my-2'>
-                                        <RedStarTracker player={item} />
-                                    </Col>
-                                )
-                            })
-                            }
-                        </Row>
-                    </Card>
-                </Col>
-            </Row>
-            <Row className='mt-3'>
-                <Col>
-                    <Card>
-                        <Row className='my-2'>
-                            <Col>
-                                <h3 className='my-2'>Active Player</h3>
-                            </Col>
-                            <Col>
-                                <h5>Recruit Troops</h5>
-                                <h5>Attack and Expand</h5>
-                                <h5>Friendly Move</h5>
-                            </Col>
-                        </Row>
-                    </Card>
-                </Col>
-            </Row>
+            {/* <Row className='mt-3'> */}
+            <CardDeck>
+                <Card>
+                    <Row className='my-2'>
+                        <Col>
+                            <h3 className='my-2'>Active Player</h3>
+                        </Col>
+                        <Col>
+                            <Button className='my-1'>Recruit Troops</Button>
+                            <Button className='my-1'>Attack and Expand</Button>
+                            <Button className='my-1'>Friendly Move</Button>
+                        </Col>
+                    </Row>
+                </Card>
+                <Card>
+                    <Row className="my-3 justify-content-center">
+                        {players.map((item, idx) => {
+                            return (
+                                <Col key={idx} className='my-2'>
+                                    <RedStarTracker player={item} />
+                                </Col>
+                            )
+                        })
+                        }
+                    </Row>
+                </Card>
+            </CardDeck>
+
             <Row className="mt-3">
                 <Col>
                     <Row>
