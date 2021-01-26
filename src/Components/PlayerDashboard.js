@@ -48,16 +48,7 @@ const PlayerDashboard = (props) => {
                 </Col>
             </Row>
             <Row className="mt-3">
-                <Col sm="6">
-                    {/* Territory Pane */}
-                    <Card body>
-                        <CardTitle tag="h5">Territories</CardTitle>
-                        <MapTabs
-                            players={players}
-                        />
-                    </Card>
-                </Col>
-                <Col sm="6">
+                <Col>
                     <Row>
                         <Col>
                             <Recruitment
@@ -65,6 +56,17 @@ const PlayerDashboard = (props) => {
                             />
                         </Col>
                     </Row>
+                </Col>
+            </Row>
+            <Row className="mt-3">
+                <Col>
+                    {/* Territory Pane */}
+                    <Card body>
+                        <CardTitle tag="h5">Territories</CardTitle>
+                        <MapTabs
+                            players={players}
+                        />
+                    </Card>
                 </Col>
             </Row>
         </Container>

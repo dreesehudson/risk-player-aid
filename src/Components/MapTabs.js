@@ -14,7 +14,6 @@ const MapTabs = (props) => {
     const toggle = tab => { if (activeTab !== tab) setActiveTab(tab); }
     const [toggleCollapse, setToggleCollapse] = useState(-1);
     const { regions, setRegions } = useContext(DataContext)
-    
 
     function toggleAccordian(id) {
         if (toggleCollapse == id) {
@@ -24,7 +23,6 @@ const MapTabs = (props) => {
             setToggleCollapse(id)
         }
     }
-
 
     return (
         <>
@@ -54,15 +52,27 @@ const MapTabs = (props) => {
                                                             region.territories.map((i, key) => {
                                                                 return (
                                                                     <ListGroupItem key={key}>
-                                                                        <h5>
-                                                                            {i.name}
-                                                                            <HQ hq={i.hq} />
-                                                                            <Bunker bunker={i.bunker} />
-                                                                            <AmmoShortage ammoShortage={i.ammoShortage} />
-                                                                            <Mercenary mercenary={i.mercenary} />
-                                                                            <BioHazard bioHazard={i.bioHazard} />
-                                                                            <CombatModal battleground={i} />
-                                                                        </h5>
+                                                                        <Row>
+                                                                            <Col className='ml-2'>
+                                                                                <h5 className='py-3 mb-0'>
+                                                                                    {i.name}
+                                                                                </h5>
+                                                                            </Col>
+                                                                            <Col>
+                                                                                <HQ hq={i.hq} />
+                                                                            </Col>
+                                                                            <Col>
+                                                                                <Bunker bunker={i.bunker} />
+                                                                                <AmmoShortage ammoShortage={i.ammoShortage} />
+                                                                            </Col>
+                                                                            <Col>
+                                                                                <Mercenary mercenary={i.mercenary} />
+                                                                                <BioHazard bioHazard={i.bioHazard} />
+                                                                            </Col>
+                                                                            <Col>
+                                                                                <CombatModal battleground={i} />
+                                                                            </Col>
+                                                                        </Row>
                                                                     </ListGroupItem>
                                                                 )
                                                             })
