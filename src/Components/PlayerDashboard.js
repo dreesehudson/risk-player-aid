@@ -15,18 +15,38 @@ const PlayerDashboard = (props) => {
 
     return (
         <Container className='mt-3'>
-            <Card>
-                <Row className="my-3 justify-content-center">
-                    {players.map((item, idx) => {
-                        return (
-                            <Col key={idx} className='my-2'>
-                                <RedStarTracker player={item} />
+            <Row>
+                <Col>
+                    <Card>
+                        <Row className="my-3 justify-content-center">
+                            {players.map((item, idx) => {
+                                return (
+                                    <Col key={idx} className='my-2'>
+                                        <RedStarTracker player={item} />
+                                    </Col>
+                                )
+                            })
+                            }
+                        </Row>
+                    </Card>
+                </Col>
+            </Row>
+            <Row className='mt-3'>
+                <Col>
+                    <Card>
+                        <Row className='my-2'>
+                            <Col>
+                                <h3 className='my-2'>Active Player</h3>
                             </Col>
-                        )
-                    })
-                    }
-                </Row>
-            </Card>
+                            <Col>
+                                <h5>Recruit Troops</h5>
+                                <h5>Attack and Expand</h5>
+                                <h5>Friendly Move</h5>
+                            </Col>
+                        </Row>
+                    </Card>
+                </Col>
+            </Row>
             <Row className="mt-3">
                 <Col sm="6">
                     {/* Territory Pane */}

@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from 'react'
+import React, { useState, useContext } from 'react'
 import { Row, Card, CardHeader, Container, Col, CardBody, Button, Label, Input } from 'reactstrap';
 import DataContext from '../utilities/DataContext';
 
@@ -10,12 +10,14 @@ const Setup = (props) => {
     const { factions, setFactions } = useContext(DataContext)
     const [numberOfPlayers, setNumberOfPlayers] = useState(5)
     const [playersLocked, setPlayersLocked] = useState(false)
+    const [allPlayersReady, setAllPlayersReady] = useState(false)
 
     function addPlayer() {
         setNumberOfPlayers(numberOfPlayers + 1)
         let proxy = players
         proxy.push({ id: players.length, name: "", faction: {} })
         setPlayers(proxy)
+        console.log({ players })
     }
 
     function removePlayer() {
@@ -23,8 +25,10 @@ const Setup = (props) => {
         let proxy = players
         proxy.pop()
         setPlayers(proxy)
-        console.log(proxy)
-        console.log({players})
+        console.log({ players })
+    }
+    function readyPlayer() {
+
     }
 
     function submitPlayers() {
@@ -32,18 +36,13 @@ const Setup = (props) => {
         setPlayersLocked(true)
         //assign player names to context hook
         setPlayers([
-            { id: 0, name: "", faction: {} },
-            { id: 1, name: "", faction: {} },
-            { id: 2, name: "", faction: {} },
-            { id: 3, name: "", faction: {} },
-            { id: 4, name: "", faction: {} },
+            { id: 0, name: "", faction: {}, ready: false },
+            { id: 1, name: "", faction: {}, ready: false },
+            { id: 2, name: "", faction: {}, ready: false },
+            { id: 3, name: "", faction: {}, ready: false },
+            { id: 4, name: "", faction: {}, ready: false },
         ])
     }
-
-    useEffect(() => {
-
-    }, [players.length])
-
 
     return (
         <Container className='mt-3'>
@@ -70,9 +69,20 @@ const Setup = (props) => {
                     players.map((player, key) => {
                         return (
                             <Col key={key}>
-                                <Label>Player Name</Label>
-                                <Input required />
-                                <Button className='my-3'>Save</Button>
+                                {
+                                    player.ready ?
+                                        <>
+                                            <Label>Player Name</Label>
+                                            <Input required></Input>
+                                            <Button className='bg-success my-3'>Ready</Button>
+                                        </>
+                                        :
+                                        <>
+                                            <Label>Player Name</Label>
+                                            <Input required></Input>
+                                            <Button onClick={() => readyPlayer()} className='bg-danger my-3'>Ready</Button>
+                                        </>
+                                }
                             </Col>
                         )
                     })
@@ -81,8 +91,15 @@ const Setup = (props) => {
             {
                 !playersLocked ?
                     <>
+                        {
+                            allPlayersReady ?
+                                <Button className='my-3' onClick={() => submitPlayers()}>Submit</Button>
+
+                                :
+
+                                <Button disabled className='my-3'>Submit</Button>
+                        }
                         {/* Submit button to lock in the player names */}
-                        <Button className='my-3' onClick={() => submitPlayers()}>Submit</Button>
                     </>
                     :
                     <>

@@ -9,8 +9,8 @@ import Odds from './Odds';
 import DataContext from '../utilities/DataContext';
 
 
-const CombatRoll = (props) => {
-    const [battleground, setBattleground] = useState('');
+const CombatModal = (props) => {
+    const [battleground, setBattleground] = useState(`${props.battleground}`);
     const [attackingFrom, setAttackingFrom] = useState('');
     const [modal, setModal] = useState(false);
     {/* players will need to be moved to a useContext helper that is populated from Austin's new game modal */ }
@@ -126,11 +126,11 @@ const CombatRoll = (props) => {
                         </Row>
                         <Row>
                             <Col className="justify-content-center">
-                                <Label>Defender</Label>
+                                <Label className='mt-2'>Defender Troop Count</Label>
                                 <Input></Input>
                             </Col>
                             <Col className="justify-content-center">
-                                <Label>Attacker</Label>
+                                <Label className='mt-2'>Attacker Troop Count</Label>
                                 <Input></Input>
                             </Col>
                         </Row>
@@ -157,4 +157,4 @@ const CombatRoll = (props) => {
     )
 }
 
-export default CombatRoll
+export default CombatModal

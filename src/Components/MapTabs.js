@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react';
 import { TabContent, TabPane, Nav, NavItem, NavLink, Row, Col, ListGroup, ListGroupItem, Collapse, Card, CardHeader, Badge } from 'reactstrap';
 import classnames from 'classnames';
-import CombatRoll from './CombatRoll';
+import CombatModal from './CombatModal';
 import AmmoShortage from './AmmoShortage';
 import HQ from './HQ';
 import Bunker from './Bunker';
@@ -61,7 +61,7 @@ const MapTabs = (props) => {
                                                                             <AmmoShortage ammoShortage={i.ammoShortage} />
                                                                             <Mercenary mercenary={i.mercenary} />
                                                                             <BioHazard bioHazard={i.bioHazard} />
-                                                                            <CombatRoll />
+                                                                            <CombatModal battleground={i} />
                                                                         </h5>
                                                                     </ListGroupItem>
                                                                 )
