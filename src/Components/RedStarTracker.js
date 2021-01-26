@@ -14,6 +14,10 @@ function RedStarTracker(props) {
                 <Col>
                     <Star/>
                     <Star/>
+                </Col>
+            </Row>
+            <Row>
+                <Col>
                     <Star/>
                     <Star/>
                 </Col>
