@@ -15,11 +15,11 @@ export const useApp = () => {
 
 function useAppProvider() {
     const [players, setPlayers] = useState([
-        { id: 0, name: "", faction: {} },
-        { id: 1, name: "", faction: {} },
-        { id: 2, name: "", faction: {} },
-        { id: 3, name: "", faction: {} },
-        { id: 4, name: "", faction: {} },
+        { id: 0, name: "a", faction: {} },
+        { id: 1, name: "b", faction: {} },
+        { id: 2, name: "c", faction: {} },
+        { id: 3, name: "d", faction: {} },
+        { id: 4, name: "e", faction: {} },
     ]);
 
     const [factions, setFactions] = useState(
