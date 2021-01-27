@@ -242,6 +242,18 @@ const CombatModal = (props) => {
                                 </h4>
                             </Col>
                         </Row>
+                        <hr />
+                        <Row>
+                            <Col>
+                                <h4 className='text-center'>
+                                    {
+                                        //bug: message shows from previous die roll results?
+                                        rollMessage
+                                    }
+                                </h4>
+                            </Col>
+                        </Row>
+
                     </>
                 </ModalBody>
                 <ModalFooter className="justify-content-center">

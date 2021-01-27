@@ -7,7 +7,7 @@ const Die = (props) => {
     return (
         <>
             {
-                props.die === 1 && 
+                props.die <= 1 && 
                     <FontAwesomeIcon className='m-2 mt-3 fa-2x' icon={faDiceOne} />            
             }
             {
@@ -27,7 +27,7 @@ const Die = (props) => {
                     <FontAwesomeIcon className='m-2 mt-3 fa-2x' icon={faDiceFive} />            
             }
             {
-                props.die === 6 && 
+                props.die >= 6 && 
                     <FontAwesomeIcon className='m-2 mt-3 fa-2x' icon={faDiceSix} />            
             }
         </>
