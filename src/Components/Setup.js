@@ -1,6 +1,7 @@
 import React, { useState, useContext } from 'react'
-import { Row, Card, CardHeader, Container, Col, CardBody, Button, Label, Input } from 'reactstrap';
+import { Collapse, Row, Card, CardHeader, Container, Col, CardBody, Button, Label, Input } from 'reactstrap';
 import DataContext from '../utilities/DataContext';
+import Unlockables from './Unlockables';
 
 const Setup = (props) => {
     const [draft, setDraft] = useState(false)
@@ -11,6 +12,8 @@ const Setup = (props) => {
     const [numberOfPlayers, setNumberOfPlayers] = useState(5)
     const [playersLocked, setPlayersLocked] = useState(false)
     const [allPlayersReady, setAllPlayersReady] = useState(false)
+    const [isOpen, setIsOpen] = useState(false);
+    const toggle = () => setIsOpen(!isOpen);
 
     function addPlayer() {
         setNumberOfPlayers(numberOfPlayers + 1)
@@ -46,6 +49,20 @@ const Setup = (props) => {
 
     return (
         <Container className='mt-3'>
+            <Row>
+                <Col>
+                    <Button color="secondary" onClick={toggle} style={{ marginBottom: '1rem' }}>Unlocks</Button>
+                    <Collapse isOpen={isOpen}>
+                        <Card>
+                            <CardBody>
+                                <Unlockables/>
+                        </CardBody>
+                        </Card>
+                    </Collapse>
+                </Col>
+            </Row>
+
+
             {/* # of Players */}
             <Row className='justify-content-center my-3'>
                 <h3 className='mr-2'>Number of Players:</h3>

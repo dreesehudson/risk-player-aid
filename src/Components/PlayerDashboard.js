@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react'
-import { Card, CardTitle, Row, Col, Container, CardGroup, CardDeck, Button } from 'reactstrap';
+import { Card, CardTitle, Row, Col, Container, CardDeck, Button } from 'reactstrap';
 import RedStarTracker from './RedStarTracker'
 import Recruitment from './Recruitment'
 import MapTabs from './MapTabs';
