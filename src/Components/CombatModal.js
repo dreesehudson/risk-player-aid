@@ -3,12 +3,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBan, faChessRook, faDiceD6, faFlag, faShieldAlt, faShieldVirus, faUserShield } from '@fortawesome/free-solid-svg-icons'
 import { Button, Row, Col, Modal, ModalHeader, ModalBody, ModalFooter, Input, Label } from 'reactstrap';
 import Select from "react-select";
-import Bunker from './Bunker';
-import AmmoShortage from './AmmoShortage';
-import Odds from './Odds';
+// import AmmoShortage from './AmmoShortage';
+// import Odds from './Odds';
 import DataContext from '../utilities/DataContext';
 import Die from './Die';
-import { faFortAwesome, faFortAwesomeAlt } from '@fortawesome/free-brands-svg-icons';
+// import { faFortAwesome, faFortAwesomeAlt } from '@fortawesome/free-brands-svg-icons';
+import Scar from './Scar';
 
 
 const CombatModal = (props) => {
@@ -211,10 +211,10 @@ const CombatModal = (props) => {
                                 
                             </Col>
                             <Col className="text-center">
-                                <FontAwesomeIcon className='fa-3x m-2 mt-3' icon={faShieldAlt}/>
-                                <FontAwesomeIcon className='fa-3x m-2 mt-3' icon={faBan}/>
-                                <FontAwesomeIcon className='fa-3x m-2 mt-3' icon={faChessRook}/>
-                                <FontAwesomeIcon className='fa-3x m-2 mt-3' icon={faFlag}/>
+                                <Scar icon={faShieldAlt} color={'orange'}/>
+                                <Scar icon={faBan} color={'red'}/>
+                                <Scar icon={faChessRook} color={'blue'}/>
+                                <Scar icon={faFlag} color={'black'}/>
                             </Col>
                         </Row>
                         <hr />

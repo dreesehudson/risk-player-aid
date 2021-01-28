@@ -2,11 +2,6 @@ import React, { useState, useContext } from 'react';
 import { TabContent, TabPane, Nav, NavItem, NavLink, Row, Col, ListGroup, ListGroupItem, Collapse, Card, CardHeader, Badge } from 'reactstrap';
 import classnames from 'classnames';
 import CombatModal from './CombatModal';
-import AmmoShortage from './AmmoShortage';
-import HQ from './HQ';
-import Bunker from './Bunker';
-import Mercenary from './Mercenary';
-import BioHazard from './BioHazard';
 import DataContext from '../utilities/DataContext';
 
 const MapTabs = (props) => {
@@ -57,17 +52,6 @@ const MapTabs = (props) => {
                                                                                 <h5 className='py-3 mb-0'>
                                                                                     {i.name}
                                                                                 </h5>
-                                                                            </Col>
-                                                                            <Col>
-                                                                                <HQ hq={i.hq} />
-                                                                            </Col>
-                                                                            <Col>
-                                                                                <Bunker bunker={i.bunker} />
-                                                                                <AmmoShortage ammoShortage={i.ammoShortage} />
-                                                                            </Col>
-                                                                            <Col>
-                                                                                <Mercenary mercenary={i.mercenary} />
-                                                                                <BioHazard bioHazard={i.bioHazard} />
                                                                             </Col>
                                                                             <Col>
                                                                                 <CombatModal battleground={i} />
