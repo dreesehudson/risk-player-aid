@@ -7,17 +7,21 @@ import Bunker from './Bunker';
 import AmmoShortage from './AmmoShortage';
 import Odds from './Odds';
 import DataContext from '../utilities/DataContext';
+import Die from './Die';
 
 
 const CombatModal = (props) => {
-    const [battleground, setBattleground] = useState(`${props.battleground}`);
-    const [attackingFrom, setAttackingFrom] = useState('');
+    //const [battleground, setBattleground] = useState(`${props.battleground}`);
+    //const [attackingFrom, setAttackingFrom] = useState('');
     const [modal, setModal] = useState(false);
-    {/* players will need to be moved to a useContext helper that is populated from Austin's new game modal */ }
     const { className } = props;
     const toggle = () => setModal(!modal);
-    const { territories, setTerritories } = useContext(DataContext)
-
+    // const { territories, setTerritories } = useContext(DataContext)
+    const [att, setAtt] = useState(3)
+    const [attRoll, setAttRoll] = useState([])
+    const [def, setDef] = useState(2)
+    const [defRoll, setDefRoll] = useState([])
+    const [rollMessage, setRollMessage] = useState("")
 
     function diceRoll(att, def) {
         let attDice = []
@@ -63,21 +67,41 @@ const CombatModal = (props) => {
             return b - a;
         })
 
-        console.log(attDice);
-        console.log(defDice);
+        setAttRoll(attDice)
+        setDefRoll(defDice)
+        console.log(`Attacker: ${attRoll}`)
+        console.log(`Defender: ${defRoll}`)
 
-        if ((defDice[0] >= attDice[0]) && (defDice[1] >= attDice[1])) {
-            //defender kills 2 attackers
-            return ("Attacker Loses 2");
-        }
-        else if ((defDice[0] < attDice[0]) && (defDice[1] < attDice[1])) {
-            //attacker kills 2 defenders
-            return ("Defender Loses 2");
+        if (defRoll.length === 1 || attRoll.length === 1) {
+            if (defRoll[0] >= attRoll[0]) {
+                console.log("Attacker Loses 1");
+                setRollMessage("Attacker Loses 1");
+            }
+            else {
+                console.log("Defender Loses 1");
+                setRollMessage("Attacker Loses 1");
+            }
         }
         else {
-            //each lose 1
-            return ("Attacker and Defender each lose 1");
+            if ((defRoll[0] >= attRoll[0]) && (defRoll[1] >= attRoll[1])) {
+                //defender kills 2 attackers
+                console.log("Attacker Loses 2");
+                setRollMessage("Attacker Loses 2");
+
+            }
+            else if ((defRoll[0] < attRoll[0]) && (defRoll[1] < attRoll[1])) {
+                //attacker kills 2 defenders
+                console.log("Defender Loses 2");
+                setRollMessage("Defender Loses 2");
+            }
+            else {
+                //each lose 1
+                console.log("Attacker and Defender each lose 1");
+                setRollMessage("Attacker and Defender each lose 1");
+            }
+
         }
+
     }
 
 
@@ -90,8 +114,8 @@ const CombatModal = (props) => {
                 <ModalHeader toggle={toggle}></ModalHeader>
                 <ModalBody>
                     <>
-                        <Odds />
-                        <Row>
+                        {/* <Odds /> */}
+                        {/* <Row>
                             <Col className="justify-content-center">
                                 <Label>Battleground</Label>
                                 <Select
@@ -145,11 +169,95 @@ const CombatModal = (props) => {
                             </Col>
                             <Col className='col-6'>
                             </Col>
+                        </Row>*/}
+                        <Row className='text-center'>
+                            <Col>
+                                <Label>Attacker</Label>
+                            </Col>
+                            <Col>
+                                <Label>Defender</Label>
+                            </Col>
                         </Row>
+                        <Row className='text-center'>
+                            <Col>
+                                {
+                                    att <= 1 ?
+                                        <Button className='disabled btn-sm'>-</Button>
+                                        :
+                                        <Button className='btn-sm' onClick={() => setAtt(att - 1)}>-</Button>
+                                }
+                                <span className='mx-2'>{att}</span>
+                                {
+                                    att > 2 ?
+                                        <Button className='disabled btn-sm'>+</Button>
+                                        :
+                                        <Button className='btn-sm' onClick={() => setAtt(att + 1)}>+</Button>
+                                }
+                            </Col>
+                            <Col>
+                                {
+                                    def <= 1 ?
+                                        <Button className='disabled btn-sm'>-</Button>
+                                        :
+                                        <Button className='btn-sm' onClick={() => setDef(def - 1)}>-</Button>
+                                }
+                                <span className='mx-2'>{def}</span>
+                                {
+                                    def > 1 ?
+                                        <Button className='disabled btn-sm'>+</Button>
+                                        :
+                                        <Button className='btn-sm' onClick={() => setDef(def + 1)}>+</Button>
+                                }
+                            </Col>
+                        </Row>
+                        <hr />
+                        <Row className='mt-3 text-center'>
+                            <Col>
+                                <h4>
+                                    {
+                                        <Die die={attRoll[0]} />
+                                    }
+                                </h4>
+                                <h4>
+                                    {
+                                        <Die die={attRoll[1]} />
+                                    }
+                                </h4>
+                                <h4>
+                                    {
+                                        <Die die={attRoll[2]} />
+                                    }
+                                </h4>
+                            </Col>
+                            <Col>
+                                <h4>
+                                    {
+                                        <Die die={defRoll[0]} />
+                                    }
+                                </h4>
+                                <h4>
+                                    {
+                                        <Die die={defRoll[1]} />
+                                    }
+                                </h4>
+                            </Col>
+                        </Row>
+                        <hr />
+                        <Row>
+                            <Col>
+                                <h4 className='text-center'>
+                                    {
+                                        //bug: message shows from previous die roll results?
+                                        rollMessage
+                                    }
+                                </h4>
+                            </Col>
+                        </Row>
+
                     </>
                 </ModalBody>
                 <ModalFooter className="justify-content-center">
-                    <Button color="primary" onClick={toggle}>Roll</Button>{' '}
+                    <Button color="primary" onClick={() => diceRoll(att, def)}>Roll</Button>{' '}
                     <Button color="secondary" onClick={toggle}>Retreat</Button>
                 </ModalFooter>
             </Modal>
