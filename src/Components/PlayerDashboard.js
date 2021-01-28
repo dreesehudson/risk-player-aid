@@ -1,6 +1,7 @@
 import React, { useState, useContext } from 'react'
 import { Card, CardTitle, Row, Col, Container, CardGroup, CardDeck, Button } from 'reactstrap';
 import RedStarTracker from './RedStarTracker'
+import MissleTracker from './MissleTracker'
 import Recruitment from './Recruitment'
 import MapTabs from './MapTabs';
 import DataContext from '../utilities/DataContext';
@@ -35,6 +36,7 @@ const PlayerDashboard = (props) => {
                             return (
                                 <Col key={idx} className='my-2'>
                                     <RedStarTracker player={item} />
+                                    <MissleTracker player ={item} />
                                 </Col>
                             )
                         })
