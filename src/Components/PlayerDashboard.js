@@ -31,11 +31,12 @@ const PlayerDashboard = (props) => {
                     </Row>
                 </Card>
                 <Card>
-                    <Row className="my-3 justify-content-center">
+                    <Row className="my-3 px-3 justify-content-center">
                         {players.map((item, idx) => {
                             return (
                                 <Col key={idx} className='my-2'>
                                     <RedStarTracker player={item} />
+                                    <hr/>
                                     <MissleTracker player ={item} />
                                 </Col>
                             )

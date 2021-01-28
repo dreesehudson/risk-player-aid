@@ -7,10 +7,9 @@ function MissleTracker(props) {
     const [count, setCount] = useState(0)
     return (
         <>
-            <hr />
             <Row>
                 <Col>
-                    <FontAwesomeIcon className='mx-1 fa-lg' color='orange' icon={faRocket} />
+                    <FontAwesomeIcon className='mx-1 mb-2 fa-2x' color='orange' icon={faRocket} />
                     <br />
                     <Button color='primary' className='btn-sm' onClick={() => setCount(count + 1)} disabled={count == 15} >+</Button>
                         <Container>

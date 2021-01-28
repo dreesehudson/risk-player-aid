@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faDiceD6 } from '@fortawesome/free-solid-svg-icons'
+import { faBan, faChessRook, faDiceD6, faFlag, faShieldAlt, faShieldVirus, faUserShield } from '@fortawesome/free-solid-svg-icons'
 import { Button, Row, Col, Modal, ModalHeader, ModalBody, ModalFooter, Input, Label } from 'reactstrap';
 import Select from "react-select";
 import Bunker from './Bunker';
@@ -8,6 +8,7 @@ import AmmoShortage from './AmmoShortage';
 import Odds from './Odds';
 import DataContext from '../utilities/DataContext';
 import Die from './Die';
+import { faFortAwesome, faFortAwesomeAlt } from '@fortawesome/free-brands-svg-icons';
 
 
 const CombatModal = (props) => {
@@ -69,11 +70,11 @@ const CombatModal = (props) => {
 
         setAttRoll(attDice)
         setDefRoll(defDice)
-        console.log(`Attacker: ${attRoll}`)
-        console.log(`Defender: ${defRoll}`)
+        console.log(`Attacker: ${attDice}`)
+        console.log(`Defender: ${defDice}`)
 
-        if (defRoll.length === 1 || attRoll.length === 1) {
-            if (defRoll[0] >= attRoll[0]) {
+        if (defDice.length === 1 || attDice.length === 1) {
+            if (defDice[0] >= attDice[0]) {
                 console.log("Attacker Loses 1");
                 setRollMessage("Attacker Loses 1");
             }
@@ -83,25 +84,20 @@ const CombatModal = (props) => {
             }
         }
         else {
-            if ((defRoll[0] >= attRoll[0]) && (defRoll[1] >= attRoll[1])) {
-                //defender kills 2 attackers
+            if ((defDice[0] >= attDice[0]) && (defDice[1] >= attDice[1])) {
                 console.log("Attacker Loses 2");
                 setRollMessage("Attacker Loses 2");
-
             }
-            else if ((defRoll[0] < attRoll[0]) && (defRoll[1] < attRoll[1])) {
-                //attacker kills 2 defenders
+            else if ((defDice[0] < attDice[0]) && (defDice[1] < attDice[1])) {
                 console.log("Defender Loses 2");
                 setRollMessage("Defender Loses 2");
             }
             else {
-                //each lose 1
                 console.log("Attacker and Defender each lose 1");
                 setRollMessage("Attacker and Defender each lose 1");
             }
-
         }
-
+        return (attDice, defDice)
     }
 
 
@@ -208,6 +204,17 @@ const CombatModal = (props) => {
                                         :
                                         <Button className='btn-sm' onClick={() => setDef(def + 1)}>+</Button>
                                 }
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col>
+                                
+                            </Col>
+                            <Col className="text-center">
+                                <FontAwesomeIcon className='fa-3x m-2 mt-3' icon={faShieldAlt}/>
+                                <FontAwesomeIcon className='fa-3x m-2 mt-3' icon={faBan}/>
+                                <FontAwesomeIcon className='fa-3x m-2 mt-3' icon={faChessRook}/>
+                                <FontAwesomeIcon className='fa-3x m-2 mt-3' icon={faFlag}/>
                             </Col>
                         </Row>
                         <hr />
