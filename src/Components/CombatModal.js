@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBan, faChessRook, faDiceD6, faFlag, faShieldAlt, faShieldVirus, faUserShield } from '@fortawesome/free-solid-svg-icons'
+import { faBan, faChess, faChessRook, faDiceD6, faFlag, faShieldAlt, faShieldVirus, faUserShield } from '@fortawesome/free-solid-svg-icons'
 import { Button, Row, Col, Modal, ModalHeader, ModalBody, ModalFooter, Input, Label } from 'reactstrap';
 import Select from "react-select";
 // import AmmoShortage from './AmmoShortage';
@@ -25,6 +25,9 @@ const CombatModal = (props) => {
     const [rollMessage, setRollMessage] = useState("")
     const [rolling, setRolling] = useState(true)
     const [bunker, setBunker] = useState(false)
+    const [ammoShortage, setAmmoShortage] = useState(false)
+    const [fortification, setFortification] = useState(false)
+    const [hq, setHQ] = useState(false)
 
     function diceRoll(att, def) {
 
@@ -53,7 +56,14 @@ const CombatModal = (props) => {
             defDice[0] = defDice[0] + 1
         }
         //      Scar: ammoShortage: -1 to the defenders high die
+        if (ammoShortage) {
+            defDice[0] = defDice[0] - 1
+        }
         //      Scar: fortified: +1 to both defenders die, and reduce fortification value if attacked by at least 3 soldiers
+        if (fortification) {
+            defDice[0] = defDice[0] + 1
+            defDice[1] = defDice[1] + 1
+        }
         //      Faction: DieMechaniker natural 6's territory cannot be attacked again
         //      Faction: DieMechaniker HQ is always fortified as defender
         //      Faction: Enclave of the Bear, defender subtract 1 from lower die in first territory you attack on your turn
@@ -216,10 +226,10 @@ const CombatModal = (props) => {
 
                             </Col>
                             <Col className="text-center">
-                                <Scar onClickMethod={() => setBunker(prevBunker => !prevBunker)} icon={faShieldAlt} color={'orange'} />                                
-                                    <Scar icon={faBan} color={'red'} />
-                                <Scar icon={faChessRook} color={'blue'} />
-                                <Scar icon={faFlag} color={'black'} />
+                                <Scar onClickMethod={() => setBunker(prevBunker => !prevBunker)} icon={faShieldAlt} color={'orange'} />
+                                <Scar onClickMethod={() => setAmmoShortage(prevAmmoShortage => !prevAmmoShortage)} icon={faBan} color={'red'} />
+                                <Scar onClickMethod={() => setFortification(prevFortification => !prevFortification)} icon={faChessRook} color={'blue'} />
+                                <Scar onClickMethod={() => setHQ(prevHQ => !prevHQ)} icon={faFlag} color={'black'} />
                             </Col>
                         </Row>
                         <hr />
@@ -242,10 +252,18 @@ const CombatModal = (props) => {
                                 </h4>
                             </Col>
                             <Col>
-                                {
+                                {/* {
                                     bunker &&
                                     <h3>BUNKER ON</h3>
                                 }
+                                {
+                                    ammoShortage &&
+                                    <h3>ammoShort ON</h3>
+                                }
+                                {
+                                    fortification &&
+                                    <h3>Fort ON</h3>
+                                } */}
                                 <h4>
                                     {
                                         <Die die={defRoll[0]} />
@@ -263,7 +281,6 @@ const CombatModal = (props) => {
                             <Col>
                                 <h4 className='text-center'>
                                     {
-                                        //bug: message shows from previous die roll results?
                                         rollMessage
                                     }
                                 </h4>
