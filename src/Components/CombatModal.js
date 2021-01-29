@@ -23,8 +23,11 @@ const CombatModal = (props) => {
     const [def, setDef] = useState(2)
     const [defRoll, setDefRoll] = useState([])
     const [rollMessage, setRollMessage] = useState("")
+    const [rolling, setRolling] = useState(true)
+    const [bunker, setBunker] = useState(false)
 
     function diceRoll(att, def) {
+
         let attDice = []
         let defDice = []
         for (let i = 0; i < att; i++) {
@@ -46,6 +49,9 @@ const CombatModal = (props) => {
 
         //____die modifiers____
         //      Scar: bunker: +1 to the defenders high die
+        if (bunker) {
+            defDice[0] = defDice[0] + 1
+        }
         //      Scar: ammoShortage: -1 to the defenders high die
         //      Scar: fortified: +1 to both defenders die, and reduce fortification value if attacked by at least 3 soldiers
         //      Faction: DieMechaniker natural 6's territory cannot be attacked again
@@ -99,7 +105,6 @@ const CombatModal = (props) => {
         }
         return (attDice, defDice)
     }
-
 
     return (
         <>
@@ -208,13 +213,20 @@ const CombatModal = (props) => {
                         </Row>
                         <Row>
                             <Col>
-                                
+
                             </Col>
                             <Col className="text-center">
-                                <Scar icon={faShieldAlt} color={'orange'}/>
-                                <Scar icon={faBan} color={'red'}/>
-                                <Scar icon={faChessRook} color={'blue'}/>
-                                <Scar icon={faFlag} color={'black'}/>
+                                <Scar
+                                    onClick={() => {
+                                        console.log("before setBunker:", bunker)
+                                        setBunker(prevBunker => {
+                                            console.log("inside setBunker:", prevBunker)
+                                            return !prevBunker
+                                        })
+                                    }} icon={faShieldAlt} color={'orange'} />                                
+                                    <Scar icon={faBan} color={'red'} />
+                                <Scar icon={faChessRook} color={'blue'} />
+                                <Scar icon={faFlag} color={'black'} />
                             </Col>
                         </Row>
                         <hr />
@@ -237,6 +249,10 @@ const CombatModal = (props) => {
                                 </h4>
                             </Col>
                             <Col>
+                                {
+                                    bunker &&
+                                    <h3>BUNKER ON</h3>
+                                }
                                 <h4>
                                     {
                                         <Die die={defRoll[0]} />
@@ -260,7 +276,6 @@ const CombatModal = (props) => {
                                 </h4>
                             </Col>
                         </Row>
-
                     </>
                 </ModalBody>
                 <ModalFooter className="justify-content-center">
