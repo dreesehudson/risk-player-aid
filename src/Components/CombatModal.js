@@ -216,14 +216,7 @@ const CombatModal = (props) => {
 
                             </Col>
                             <Col className="text-center">
-                                <Scar
-                                    onClick={() => {
-                                        console.log("before setBunker:", bunker)
-                                        setBunker(prevBunker => {
-                                            console.log("inside setBunker:", prevBunker)
-                                            return !prevBunker
-                                        })
-                                    }} icon={faShieldAlt} color={'orange'} />                                
+                                <Scar onClickMethod={() => setBunker(prevBunker => !prevBunker)} icon={faShieldAlt} color={'orange'} />                                
                                     <Scar icon={faBan} color={'red'} />
                                 <Scar icon={faChessRook} color={'blue'} />
                                 <Scar icon={faFlag} color={'black'} />
